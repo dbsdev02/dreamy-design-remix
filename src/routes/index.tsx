@@ -31,7 +31,7 @@ function Index() {
   return (
     <main className="overflow-hidden bg-background">
       <section className="relative mx-3 mt-3 min-h-[calc(100svh-24px)] overflow-hidden bg-primary text-primary-foreground">
-        <div className="absolute inset-0 animate-slow-zoom bg-[url('/images/project-4.jpg')] bg-cover bg-center" />
+        <div className="absolute inset-0 animate-slow-zoom bg-[url('/images/hero.jpg')] bg-cover bg-center" />
         <div className="absolute inset-0 bg-primary/55" />
         <div className="absolute inset-0 grid-lines opacity-35" />
         <header className="relative z-10 flex items-start justify-between px-7 py-6 md:px-10 md:py-7">
