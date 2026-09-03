@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowDownRight, ArrowUpRight, Plus } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/site-chrome";
 
 export const Route = createFileRoute("/")({
