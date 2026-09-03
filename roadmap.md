@@ -1,4 +1,4 @@
-- [ ] Add shared site navigation and footer
-- [ ] Add The Studio, Services, Projects, and Contact routes
-- [ ] Update the home page navigation to use the routed pages
-- [ ] Verify all routes and responsive navigation
+- [x] Add shared site navigation and footer
+- [x] Add The Studio, Services, Projects, and Contact routes
+- [x] Update the home page navigation to use the routed pages
+- [x] Verify all routes and responsive navigation

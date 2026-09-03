@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowDownRight, ArrowUpRight, ChevronDown, Menu, Plus, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowDownRight, ArrowUpRight, Plus } from "lucide-react";
+import { SiteHeader } from "@/components/site-chrome";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -24,9 +24,8 @@ const projects = [
 ];
 
 function Index() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [activeFaq, setActiveFaq] = useState(0);
-  const scrollTo = (id: string) => { setMenuOpen(false); document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }); };
+  const scrollTo = (id: string) => { document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }); };
 
   return (
     <main className="overflow-hidden bg-background">
@@ -34,26 +33,12 @@ function Index() {
         <div className="absolute inset-0 animate-slow-zoom bg-[url('/images/hero.jpg')] bg-cover bg-center" />
         <div className="absolute inset-0 bg-primary/55" />
         <div className="absolute inset-0 grid-lines opacity-35" />
-        <header className="relative z-10 flex items-start justify-between px-7 py-6 md:px-10 md:py-7">
-          <button aria-label="Open menu" onClick={() => setMenuOpen(true)} className="flex h-14 w-14 items-center justify-center rounded-full border border-primary-foreground/55 transition-colors hover:bg-primary-foreground hover:text-primary">
-            <Menu size={20} strokeWidth={1.4} />
-          </button>
-          <div className="absolute left-24 top-7 text-[13px] font-bold uppercase leading-[1.05] tracking-[0.16em] md:left-28">W.D —<br />Architect</div>
-          <nav id="primary-nav" className="hidden items-center gap-7 text-[13px] font-semibold md:flex">
-            <button onClick={() => scrollTo("about")}><span className="mr-1 text-[9px] align-top">01</span> Home</button>
-            <button onClick={() => scrollTo("about")}><span className="mr-1 text-[9px] align-top">02</span> The Studio</button>
-            <button onClick={() => scrollTo("services")}><span className="mr-1 text-[9px] align-top">03</span> Our Services</button>
-            <button onClick={() => scrollTo("projects")}><span className="mr-1 text-[9px] align-top">04</span> Projects <ChevronDown className="ml-1 inline" size={13} /></button>
-            <button onClick={() => scrollTo("contact")}><span className="mr-1 text-[9px] align-top">05</span> Contact</button>
-            <Button onClick={() => scrollTo("contact")} variant="secondary" className="ml-1 h-12 px-7 font-semibold">Contact Us</Button>
-          </nav>
-        </header>
+        <SiteHeader inverse />
         <div className="relative z-10 flex min-h-[calc(100svh-150px)] items-end px-7 pb-12 md:px-10 md:pb-16">
           <h1 className="max-w-[690px] animate-rise-in text-[clamp(2.2rem,4.3vw,4.55rem)] font-semibold leading-[.94] tracking-[-0.02em]">
             <em className="font-display font-medium">We build residential space</em> through a unique combination of engineering, construction and design.
           </h1>
         </div>
-        {menuOpen && <div className="fixed inset-0 z-50 flex flex-col bg-primary px-8 py-7 text-primary-foreground md:px-16"><button aria-label="Close menu" onClick={() => setMenuOpen(false)} className="self-end"><X size={28} /></button><nav className="mt-20 flex flex-col gap-7 text-4xl font-display italic md:text-6xl"><button className="text-left" onClick={() => scrollTo("about")}>The Studio</button><button className="text-left" onClick={() => scrollTo("services")}>Our Services</button><button className="text-left" onClick={() => scrollTo("projects")}>Projects</button><button className="text-left" onClick={() => scrollTo("contact")}>Contact</button></nav></div>}
       </section>
 
       <section id="about" className="grid-lines grid min-h-[720px] grid-cols-1 gap-10 px-8 py-28 md:grid-cols-12 md:px-16 md:py-40">
