@@ -1,14 +1,22 @@
 import { ArrowUpRight } from "lucide-react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { PageIntro, PageShell, SiteFooter, SiteHeader } from "@/components/site-chrome";
+import { PageIntro, PageShell, Reveal, SiteFooter, SiteHeader } from "@/components/site-chrome";
+import { projectCount, projectsByCategory } from "@/lib/projects";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
-      { title: "Projects — W.D.A. Architecture" },
-      { name: "description", content: "A selection of W.D.A. residential architecture and interior design projects." },
-      { property: "og:title", content: "Projects — W.D.A. Architecture" },
-      { property: "og:description", content: "A selection of W.D.A. residential architecture and interior design projects." },
+      { title: "Projects | Essential Decor — Interior Fit-Out in Dubai" },
+      {
+        name: "description",
+        content:
+          "A selection of Essential Decor commercial, retail, healthcare and institutional interior fit-out projects delivered across Dubai and the UAE.",
+      },
+      { property: "og:title", content: "Projects | Essential Decor" },
+      {
+        property: "og:description",
+        content: "Completed interior fit-out, design and build projects across Dubai.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -16,14 +24,93 @@ export const Route = createFileRoute("/projects")({
   component: ProjectsPage,
 });
 
-const projects = [
-  ["01", "Influential", "Interior Design.", "/images/project-1.jpg", "A warm, tactile home shaped around light and collected objects."],
-  ["02", "Historic", "City Marks.", "/images/project-2.jpg", "A sensitive renovation that gives an old structure a new rhythm."],
-  ["03", "Cafe —", "Restaurant.", "/images/project-5.jpg", "An intimate hospitality space designed for lingering."],
-  ["04", "Quiet", "House.", "/images/project-4.jpg", "A calm retreat where material and landscape meet."],
-  ["05", "North", "Extension.", "/images/project-3.jpg", "A precise addition that opens a family home to its garden."],
-];
-
 function ProjectsPage() {
-  return <PageShell><section className="bg-secondary"><SiteHeader /><PageIntro eyebrow="Selected work" title={<>Places that<br /><em className="font-display font-medium">stay with you.</em></>} image="/images/project-1.jpg">Every project begins with its own set of conditions. What connects them is a belief in thoughtful, enduring design and the power of a well-made place.</PageIntro></section><section className="space-y-28 px-8 py-24 md:px-16 md:py-36">{projects.map(([number, title, subtitle, image, description], index) => <article key={number} className="grid grid-cols-1 items-center gap-10 md:grid-cols-12"><div className={`md:col-span-5 ${index % 2 ? "md:col-start-8 md:order-2" : "md:col-start-2"}`}><p className="text-xs text-accent">{number}</p><h2 className="mt-5 text-6xl font-semibold leading-[.8] md:text-8xl">{title}<br /><em className="font-display font-medium">{subtitle}</em></h2><p className="mt-8 max-w-sm text-sm leading-relaxed text-muted-foreground">{description}</p><Link to="/contact" className="mt-10 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[.14em]">Enquire about a project <ArrowUpRight size={16} /></Link></div><div className={`relative aspect-[.9] overflow-hidden md:col-span-5 ${index % 2 ? "md:col-start-2 md:row-start-1" : "md:col-start-8"}`}><img src={image} alt={`${title} ${subtitle}`} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" /></div></article>)}</section><SiteFooter /></PageShell>;
+  return (
+    <PageShell>
+      <section className="bg-secondary">
+        <SiteHeader />
+        <PageIntro
+          eyebrow="Our work"
+          title={
+            <>
+              Spaces built for
+              <br />
+              <em className="font-display font-medium">how they’re used.</em>
+            </>
+          }
+        >
+          {projectCount}+ completed interiors across Dubai — commercial, retail, healthcare and
+          institutional. Designed to enhance functionality, reflect brand identity and create better
+          everyday experiences.
+        </PageIntro>
+      </section>
+
+      {projectsByCategory.map((category, ci) => (
+        <section
+          key={category.key}
+          className={`px-8 py-20 md:px-16 md:py-28 ${ci % 2 === 0 ? "" : "bg-secondary"}`}
+        >
+          <Reveal className="mb-14 border-b border-border pb-7">
+            <p className="text-xs font-semibold uppercase tracking-[.18em] text-accent">
+              {String(ci + 1).padStart(2, "0")} — {category.title}
+            </p>
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
+              {category.blurb}
+            </p>
+          </Reveal>
+          <div className="grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+            {category.projects.map((project, i) => (
+              <Reveal key={project.slug} delay={(i % 3) * 90}>
+                <Link to="/projects/$slug" params={{ slug: project.slug }} className="group block">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+                    <img
+                      src={project.cover}
+                      alt={project.name}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+                    />
+                    <span className="absolute right-3 top-3 bg-background/90 px-2 py-1 text-[10px] font-semibold uppercase tracking-[.12em]">
+                      {project.year}
+                    </span>
+                  </div>
+                  <div className="mt-5 flex items-start justify-between gap-3">
+                    <div>
+                      <h3 className="text-lg font-medium leading-snug transition-colors group-hover:text-accent">
+                        {project.name}
+                      </h3>
+                      <p className="mt-1 text-xs uppercase tracking-[.14em] text-muted-foreground">
+                        {project.location}
+                      </p>
+                    </div>
+                    <ArrowUpRight
+                      size={18}
+                      className="mt-1 shrink-0 text-muted-foreground transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-accent"
+                    />
+                  </div>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+      ))}
+
+      <section className="bg-primary px-8 py-24 text-primary-foreground md:px-16 md:py-32">
+        <Reveal className="mx-auto max-w-2xl text-center">
+          <h2 className="text-[clamp(2.4rem,5vw,4rem)] font-semibold leading-[.9] tracking-[-.03em]">
+            Want your project
+            <br />
+            <em className="font-display font-medium">on this page next year?</em>
+          </h2>
+          <Link
+            to="/contact"
+            className="mt-10 inline-flex h-12 items-center gap-2 bg-primary-foreground px-8 text-xs font-semibold uppercase tracking-[.14em] text-primary transition-transform duration-300 hover:-translate-y-0.5"
+          >
+            Start the conversation <ArrowUpRight size={15} />
+          </Link>
+        </Reveal>
+      </section>
+
+      <SiteFooter />
+    </PageShell>
+  );
 }

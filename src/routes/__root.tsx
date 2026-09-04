@@ -77,24 +77,38 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-       { title: "W.D.A. — Architecture & Interior Design" },
-       { name: "description", content: "W.D.A. creates influential residential spaces through architecture, interior design, and construction." },
-      { name: "author", content: "Lovable" },
-       { property: "og:title", content: "W.D.A. — Architecture & Interior Design" },
-       { property: "og:description", content: "Influential residential spaces through architecture, interior design, and construction." },
+      { title: "Interior Fit-Out, Design & Build in Dubai | Essential Decor LLC" },
+      {
+        name: "description",
+        content:
+          "Essential Decor LLC delivers commercial interior fit-out, design and build across Dubai and the UAE — one accountable process from concept to handover.",
+      },
+      { name: "author", content: "Essential Decor" },
+      {
+        property: "og:title",
+        content: "Interior Fit-Out, Design & Build in Dubai | Essential Decor LLC",
+      },
+      {
+        property: "og:description",
+        content:
+          "Creating commercial spaces where design, function and business purpose align. Design-led, function-focused, future-ready.",
+      },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "/images/hero.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
-       { name: "twitter:site", content: "@wda_architect" },
-       { rel: "preconnect", href: "https://fonts.googleapis.com" },
-       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=DM+Sans:wght@400;500;600;700&display=swap",
+      },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/logo-ed.png", type: "image/png" },
     ],
   }),
   shellComponent: RootShell,

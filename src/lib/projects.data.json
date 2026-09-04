@@ -1,0 +1,205 @@
+{
+  "categoryMeta": {
+    "commercial": {
+      "title": "Commercial Fit-out",
+      "blurb": "Functional workplaces designed for productivity, collaboration and brand impact."
+    },
+    "retail": {
+      "title": "Retail Fit-out",
+      "blurb": "Engaging retail spaces designed to enhance visibility and customer experience."
+    },
+    "healthcare": {
+      "title": "Healthcare & Wellness",
+      "blurb": "Calming, compliant environments designed around comfort, care and functionality."
+    },
+    "institutional": {
+      "title": "Institutional",
+      "blurb": "Education and public-facing environments delivered to a standard."
+    }
+  },
+  "categoryOrder": ["commercial", "retail", "healthcare", "institutional"],
+  "meta": {
+    "Averyx Group, TECOM": {
+      "category": "commercial",
+      "name": "Averyx Group Office",
+      "location": "TECOM, Dubai",
+      "year": "2026",
+      "blurb": "A modern office fit-out combining smart space planning, glass partitions, custom joinery and refined finishes to create a functional, professional workspace."
+    },
+    "Neo": {
+      "category": "commercial",
+      "name": "Neo Mines Office",
+      "location": "Dubai",
+      "year": "2025–26",
+      "blurb": "A contemporary office fit-out featuring a bold reception, glass-partitioned workspaces and clean finishes for a sleek, efficient environment."
+    },
+    "One stop Shop": {
+      "category": "commercial",
+      "name": "One Stop Shop Office",
+      "location": "Dubai Health, Dubai",
+      "year": "2025–26",
+      "blurb": "A vibrant office fit-out combining bold brand colours, custom joinery and collaborative spaces to create a dynamic, functional workplace."
+    },
+    "Time Lapse (project name )": {
+      "category": "commercial",
+      "name": "Timelapse Office",
+      "location": "JLT, Dubai",
+      "year": "2025–26",
+      "blurb": "A dynamic office fit-out blending biophilic elements, collaborative workspaces and recreational features to create an energetic workplace."
+    },
+    "Kingston Stanly": {
+      "category": "commercial",
+      "name": "Kingston Stanley Office",
+      "location": "Dubai",
+      "year": "2018",
+      "blurb": "A vibrant office fit-out featuring branded accents, integrated lighting and efficient workspaces for a modern, energetic environment."
+    },
+    "BLS": {
+      "category": "commercial",
+      "name": "BLS International Office",
+      "location": "Dubai",
+      "year": "2018",
+      "blurb": "A modern office fit-out combining bold branding, curved workstations and efficient space planning — a welcoming, professional environment that supports productivity and daily operations."
+    },
+    "DC Technologies-Internet City": {
+      "category": "commercial",
+      "name": "DC Technologies",
+      "location": "Dubai Internet City",
+      "year": "2025",
+      "blurb": "A clean, efficient technology-company workspace with practical planning and understated finishes."
+    },
+    "DHCX office": {
+      "category": "commercial",
+      "name": "DHCX Office",
+      "location": "Dubai",
+      "year": "2026",
+      "blurb": "A crisp corporate fit-out balancing open collaboration areas with focused meeting and work zones."
+    },
+    "Lawyer Office - Ubora Tower": {
+      "category": "commercial",
+      "name": "Law Firm Office",
+      "location": "Ubora Tower, Business Bay",
+      "year": "2025",
+      "blurb": "A considered professional-services interior — quiet, precise and built around client confidentiality."
+    },
+    "Security & Commodities": {
+      "category": "commercial",
+      "name": "Securities & Commodities Authority",
+      "location": "Dubai",
+      "year": "2025",
+      "blurb": "An institutional office fit-out delivered to a regulatory-body standard, with durable materials and a formal palette."
+    },
+    "Technopark, DIC": {
+      "category": "commercial",
+      "name": "Technopark Office",
+      "location": "Dubai Internet City",
+      "year": "2025",
+      "blurb": "A functional workspace fit-out with efficient planning and clean, hard-wearing finishes."
+    },
+    "Prayer Room": {
+      "category": "commercial",
+      "name": "Prayer Room — DHC",
+      "location": "Dubai Healthcare City",
+      "year": "2025–26",
+      "blurb": "A serene prayer room fit-out featuring soft lighting, refined detailing and thoughtfully designed ablution facilities for a calm, welcoming environment."
+    },
+    "Restroom Renovation - Commercial Tower 1": {
+      "category": "commercial",
+      "name": "Restroom Renovation — Tower 1",
+      "location": "Dubai",
+      "year": "2026",
+      "blurb": "A refined washroom renovation combining contemporary finishes, integrated lighting and functional detailing for a clean, elevated experience."
+    },
+    "Restroom Renovation - Commercial Tower 2": {
+      "category": "commercial",
+      "name": "Restroom Renovation — Tower 2",
+      "location": "Dubai",
+      "year": "2026",
+      "blurb": "A contemporary restroom refurbishment with durable stone-look surfaces, concealed services and a calm, consistent material story."
+    },
+    "Balance Studio - Yoga & Pilates, Jumeirah": {
+      "category": "retail",
+      "name": "Balance Studio — Yoga & Pilates",
+      "location": "Jumeirah, Dubai",
+      "year": "2026",
+      "blurb": "A calming wellness studio combining organic forms, warm finishes and thoughtful lighting to create an inviting space for yoga and Pilates."
+    },
+    "Watch 971": {
+      "category": "retail",
+      "name": "971 Watch Co",
+      "location": "Dubai",
+      "year": "2025–26",
+      "blurb": "A luxury watch boutique combining bold branding, sculptural displays and refined finishes to create an exclusive retail experience."
+    },
+    "Laundry Hub": {
+      "category": "retail",
+      "name": "The Laundry Hub",
+      "location": "Dubai",
+      "year": "2025–26",
+      "blurb": "A vibrant laundry store combining bold branding, efficient service counters and practical garment-display solutions for a seamless customer experience."
+    },
+    "Prep Me Learning Center - JGE Mall": {
+      "category": "retail",
+      "name": "PrepMe Learning Centre",
+      "location": "JGE Mall, Dubai",
+      "year": "2025–26",
+      "blurb": "A vibrant learning centre combining bold branding, creative classrooms and dedicated music spaces to inspire learning and self-expression."
+    },
+    "Toddlers International Nursery - Majan": {
+      "category": "retail",
+      "name": "Toddlers International Nursery — Majan",
+      "location": "Majan, Dubai",
+      "year": "2025–26",
+      "blurb": "A playful nursery fit-out combining themed classrooms, child-friendly details and a welcoming reception to create a safe, engaging learning environment."
+    },
+    "Toddlers International Nursery - Meydan": {
+      "category": "retail",
+      "name": "Toddlers International Nursery — Meydan",
+      "location": "Meydan, Dubai",
+      "year": "2026",
+      "blurb": "A cheerful nursery fit-out combining soft pastel tones, interactive features and child-friendly details to create a welcoming learning environment."
+    },
+    "Candy Floss": {
+      "category": "retail",
+      "name": "Candy Floss Play Centre",
+      "location": "Dubai",
+      "year": "2025–26",
+      "blurb": "A vibrant indoor play centre combining colourful activity zones, soft-play features and family-friendly spaces for an engaging experience."
+    },
+    "Antakaya - Psychotherapy clinic": {
+      "category": "healthcare",
+      "name": "Antakaya Psychotherapy Clinic",
+      "location": "Dubai",
+      "year": "2025–26",
+      "blurb": "A serene clinic interior combining soft curves, warm neutral finishes and thoughtfully designed therapy spaces for a calming, supportive environment."
+    },
+    "Ayurveda": {
+      "category": "healthcare",
+      "name": "Ayurveda Clinic",
+      "location": "Dubai",
+      "year": "2025",
+      "blurb": "A calming Ayurveda clinic combining natural textures, warm finishes and functional treatment spaces to create a restorative wellness environment."
+    },
+    "Shams Moopen clinic": {
+      "category": "healthcare",
+      "name": "Shams Moopen Dental Clinic",
+      "location": "Dubai",
+      "year": "2025",
+      "blurb": "A clinical interior fit-out with patient flow, lighting and materials planned around comfort and compliance in equal measure."
+    },
+    "Renders medical institute": {
+      "category": "healthcare",
+      "name": "Medical Institute",
+      "location": "Dubai",
+      "year": "2025 · Design",
+      "blurb": "Design renders for a medical teaching institute — calm, clinical spaces planned around students, staff and patients."
+    },
+    "Medical university Outdoor area - design only": {
+      "category": "institutional",
+      "name": "Medical University Outdoor Area",
+      "location": "Dubai · Design only",
+      "year": "2026 · Design",
+      "blurb": "A biophilic outdoor transformation combining shaded walkways, landscaped seating and organic forms to create a calming, restorative environment."
+    }
+  }
+}

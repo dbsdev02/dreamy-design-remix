@@ -1,0 +1,146 @@
+{
+  "sectors": [
+    {
+      "title": "Commercial",
+      "text": "Workplaces and corporate interiors built for productivity, collaboration and brand impact.",
+      "image": "/images/project-3.jpg"
+    },
+    {
+      "title": "Hospitality & F&B",
+      "text": "Restaurants, cafés and guest-facing spaces designed for atmosphere and flow.",
+      "image": "/images/project-5.jpg"
+    },
+    {
+      "title": "Wellness & Healthcare",
+      "text": "Clinics and wellness studios — calming, compliant and centred on comfort and care.",
+      "image": "/images/hero-alt.jpg"
+    },
+    {
+      "title": "Institutional",
+      "text": "Education, community and public-facing environments delivered to standard.",
+      "image": "/images/project-1.jpg"
+    }
+  ],
+  "capabilities": [
+    "Interior Design",
+    "Turnkey Fit-out",
+    "Interior Fit-out",
+    "Floor Finishes & Wall Panelling",
+    "Structured Cabling",
+    "Security Systems",
+    "Joinery",
+    "Electrical & Plumbing",
+    "Fire Detection & Fire Fighting",
+    "Partitions & Fixtures",
+    "Windows & Glazing",
+    "Acoustics"
+  ],
+  "advantages": [
+    {
+      "number": "01",
+      "title": "Customized, unique design solutions",
+      "text": "Tailored designs that reflect your brand and vision."
+    },
+    {
+      "number": "02",
+      "title": "Seamless project management",
+      "text": "Smooth coordination from concept to completion."
+    },
+    {
+      "number": "03",
+      "title": "Expert, creative design team",
+      "text": "Experienced professionals delivering innovative solutions."
+    },
+    {
+      "number": "04",
+      "title": "High quality, affordable materials",
+      "text": "Value-driven material selection without compromise."
+    },
+    {
+      "number": "05",
+      "title": "Timely, efficient project completion",
+      "text": "Reliable delivery, on time and within scope."
+    }
+  ],
+  "approach": [
+    {
+      "title": "Curated selection",
+      "text": "We carefully source materials and products from trusted local and international suppliers, ensuring quality, durability and strong design integrity."
+    },
+    {
+      "title": "Expert consultation",
+      "text": "Our experienced team provides practical, design-led guidance to help clients choose materials that align with their vision, functional needs and budget."
+    },
+    {
+      "title": "Professional installation",
+      "text": "Our skilled and certified installers ensure precise execution, delivering a seamless finish and reliable long-term performance."
+    },
+    {
+      "title": "Customer-centric approach",
+      "text": "We prioritise clear communication, transparent pricing, timely delivery and dependable after-sales support throughout the project journey."
+    },
+    {
+      "title": "Competitive pricing",
+      "text": "We strive to offer premium products and professional services at competitive rates, creating excellent value for every project."
+    },
+    {
+      "title": "One-stop solution",
+      "text": "From consultation and material selection to delivery and installation, we provide a seamless and comprehensive experience."
+    }
+  ],
+  "approvals": [
+    "DMCC",
+    "TECOM",
+    "DEWA",
+    "Dubai Municipality",
+    "Trakhees",
+    "Dubai Healthcare City Authority",
+    "Abu Dhabi Distribution Co.",
+    "Department of Municipalities and Transport",
+    "Dubai Police"
+  ],
+  "testimonials": [
+    {
+      "quote": "Thanks to your hard work and dedication, the journey certainly had its challenges, but the outcome was undeniably a success. Thank you for creating such a remarkable sanctuary of tranquility.",
+      "name": "Antakaya Psychotherapy Clinic",
+      "role": "Client"
+    },
+    {
+      "quote": "Excellent interior designer and contractor. I had the pleasure of dealing with this company, especially Sanjana and Saloni, who were very proactive and great to work with. I strongly recommend this company.",
+      "name": "Faten Chafi",
+      "role": "Client"
+    }
+  ],
+  "stats": [
+    {
+      "value": 2012,
+      "label": "Established",
+      "suffix": "",
+      "plain": true
+    },
+    {
+      "value": 145,
+      "suffix": "+",
+      "label": "Projects completed",
+      "plain": false
+    },
+    {
+      "value": 140,
+      "suffix": "+",
+      "label": "Satisfied clients",
+      "plain": false
+    },
+    {
+      "value": 46000,
+      "suffix": "+",
+      "label": "Sq. ft. fitted out",
+      "plain": false
+    },
+    {
+      "value": 48,
+      "suffix": " hrs",
+      "label": "Average quote turnaround",
+      "plain": false
+    }
+  ]
+}

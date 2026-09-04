@@ -1,15 +1,22 @@
-import { ArrowUpRight, Plus } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
-import { PageIntro, PageShell, SiteFooter, SiteHeader } from "@/components/site-chrome";
+import { PageIntro, PageShell, Reveal, SiteFooter, SiteHeader } from "@/components/site-chrome";
+import { approach, capabilities } from "@/lib/portfolio";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Our Services — W.D.A. Architecture" },
-      { name: "description", content: "Architecture, interiors, and construction services for residential spaces with lasting character." },
-      { property: "og:title", content: "Our Services — W.D.A. Architecture" },
-      { property: "og:description", content: "Architecture, interiors, and construction services for residential spaces with lasting character." },
+      { title: "Services | Essential Decor — Interior Fit-Out & Design and Build" },
+      {
+        name: "description",
+        content:
+          "Comprehensive in-house design, engineering and delivery capabilities for commercial interiors across Dubai and the UAE — interior fit-out and design & build.",
+      },
+      { property: "og:title", content: "Services | Essential Decor" },
+      {
+        property: "og:description",
+        content: "One team, every trade — interior fit-out and design & build, end to end.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -17,18 +24,117 @@ export const Route = createFileRoute("/services")({
   component: ServicesPage,
 });
 
-const services = [
-  ["01", "Architecture", "From a first idea to a resolved building, we shape structure, light, and movement around the way you want to live."],
-  ["02", "Interior design", "Material palettes, joinery, furniture, and the quiet details that turn a house into a home."],
-  ["03", "Construction", "A hands-on, transparent build process that protects the design intent from the drawing board to the final key."],
+const leadServices = [
+  {
+    number: "01",
+    title: "Interior Fit-out",
+    text: "We deliver high-quality interior fit-out services, turning design concepts into fully functional spaces. Working closely with architects, designers and project managers, we provide comprehensive solutions including partitions, ceilings, flooring, high-quality furnishings and MEP (mechanical, electrical and plumbing) systems.",
+  },
+  {
+    number: "02",
+    title: "Design & Build",
+    text: "We offer a fully integrated approach to project delivery under a single turnkey contract. This method simplifies the process by consolidating the technical design and construction phases, enabling you to focus on your vision while we handle the rest.",
+  },
 ];
 
 function ServicesPage() {
-  const [active, setActive] = useState(0);
-  return <PageShell>
-    <section className="bg-secondary"><SiteHeader /><PageIntro eyebrow="Our services" title={<>One studio.<br /><em className="font-display font-medium">Every detail.</em></>} image="/images/project-3.jpg">We bring the full life of a project together under one roof — architecture, interiors, and construction working as one continuous act of making.</PageIntro></section>
-    <section className="px-8 py-24 md:px-16 md:py-36"><div className="grid grid-cols-1 gap-16 md:grid-cols-12"><div className="md:col-span-4 md:col-start-2"><p className="text-xs font-semibold uppercase tracking-[.18em] text-accent">How we help</p><h2 className="mt-7 text-6xl font-semibold leading-[.82] md:text-8xl">A clear path<br /><em className="font-display font-medium">forward.</em></h2></div><div className="md:col-span-5 md:col-start-8"><div className="divide-y divide-border border-y border-border">{services.map(([number, title, text], index) => <button key={number} onClick={() => setActive(index)} className="flex w-full items-start justify-between gap-8 py-7 text-left"><span><span className="mr-5 text-xs text-accent">{number}</span><span className="text-xl font-medium">{title}</span>{active === index && <span className="mt-5 block max-w-sm pl-9 text-sm leading-relaxed text-muted-foreground">{text}</span>}</span><Plus className={`mt-1 shrink-0 transition-transform ${active === index ? "rotate-45" : ""}`} size={20} /></button>)}</div><Link to="/contact" className="mt-10 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[.14em]">Discuss your project <ArrowUpRight size={16} /></Link></div></div></section>
-    <section className="bg-primary px-8 py-24 text-primary-foreground md:px-16 md:py-32"><div className="grid grid-cols-1 gap-14 md:grid-cols-12"><div className="md:col-span-5 md:col-start-2"><p className="text-xs uppercase tracking-[.18em] text-accent">Our process</p><h2 className="mt-6 text-6xl font-semibold leading-[.82] md:text-8xl">From first<br /><em className="font-display font-medium">line to life.</em></h2></div><div className="md:col-span-4 md:col-start-8"><div className="space-y-8 border-t border-primary-foreground/20 pt-5">{[["01", "Listen", "Understanding the brief, the place, and the people who will inhabit it."], ["02", "Shape", "Testing ideas through drawings, materials, and conversations."], ["03", "Make", "Delivering every detail with care, clarity, and a steady hand."]].map(([number, title, text]) => <div key={number} className="border-b border-primary-foreground/20 pb-8"><span className="text-xs text-accent">{number}</span><h3 className="mt-3 font-display text-3xl italic">{title}</h3><p className="mt-3 text-sm leading-relaxed text-primary-foreground/60">{text}</p></div>)}</div></div></div></section>
-    <SiteFooter />
-  </PageShell>;
+  return (
+    <PageShell>
+      <section className="bg-secondary">
+        <SiteHeader />
+        <PageIntro
+          eyebrow="Services"
+          title={
+            <>
+              Comprehensive, in-house,
+              <br />
+              <em className="font-display font-medium">end to end.</em>
+            </>
+          }
+          image="/images/project-3.jpg"
+        >
+          Comprehensive in-house design, engineering and delivery capabilities for commercial
+          interiors across Dubai and the UAE.
+        </PageIntro>
+      </section>
+
+      <section className="px-8 py-24 md:px-16 md:py-36">
+        <div className="grid grid-cols-1 gap-x-10 gap-y-16 md:grid-cols-2">
+          {leadServices.map((item, i) => (
+            <Reveal key={item.number} delay={i * 120} className="border-t border-border pt-6">
+              <span className="text-xs text-accent">{item.number}</span>
+              <h2 className="mt-6 font-display text-5xl italic">{item.title}</h2>
+              <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground">
+                {item.text}
+              </p>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-secondary px-8 py-20 md:px-16 md:py-28">
+        <Reveal className="mb-12">
+          <p className="text-xs font-semibold uppercase tracking-[.18em] text-accent">
+            Full-spectrum capabilities
+          </p>
+          <h2 className="mt-5 text-[clamp(2.4rem,5vw,4.5rem)] font-semibold leading-[.86] tracking-[-.03em]">
+            One team, <em className="font-display font-medium">every trade.</em>
+          </h2>
+        </Reveal>
+        <div className="grid grid-cols-1 border-t border-border sm:grid-cols-2 md:grid-cols-3">
+          {capabilities.map((item, i) => (
+            <Reveal
+              key={item}
+              delay={(i % 3) * 80}
+              className="flex items-center gap-4 border-b border-border py-6"
+            >
+              <span className="text-xs text-accent">{String(i + 1).padStart(2, "0")}</span>
+              <span className="text-lg font-medium">{item}</span>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section className="px-8 py-24 md:px-16 md:py-36">
+        <Reveal className="mb-16 max-w-2xl">
+          <p className="text-xs font-semibold uppercase tracking-[.18em] text-accent">
+            Our approach
+          </p>
+          <h2 className="mt-5 text-[clamp(2.6rem,5vw,5rem)] font-semibold leading-[.84] tracking-[-.03em]">
+            How the work <em className="font-display font-medium">gets done.</em>
+          </h2>
+        </Reveal>
+        <div className="grid grid-cols-1 gap-x-10 gap-y-12 border-t border-border pt-12 md:grid-cols-3">
+          {approach.map((item, i) => (
+            <Reveal key={item.title} delay={(i % 3) * 100}>
+              <span className="text-xs text-accent">{String(i + 1).padStart(2, "0")}</span>
+              <h3 className="mt-5 text-lg font-semibold">{item.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.text}</p>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-primary px-8 py-24 text-primary-foreground md:px-16 md:py-32">
+        <Reveal className="mx-auto max-w-2xl text-center">
+          <h2 className="text-[clamp(2.4rem,5vw,4rem)] font-semibold leading-[.9] tracking-[-.03em]">
+            Not sure where
+            <br />
+            <em className="font-display font-medium">your project starts?</em>
+          </h2>
+          <p className="mt-6 text-sm leading-relaxed text-primary-foreground/60">
+            Send us the brief — we’ll come back with a direction within 48 hours.
+          </p>
+          <Link
+            to="/contact"
+            className="mt-10 inline-flex h-12 items-center gap-2 bg-primary-foreground px-8 text-xs font-semibold uppercase tracking-[.14em] text-primary transition-transform duration-300 hover:-translate-y-0.5"
+          >
+            Tell us about the space <ArrowUpRight size={15} />
+          </Link>
+        </Reveal>
+      </section>
+
+      <SiteFooter />
+    </PageShell>
+  );
 }
