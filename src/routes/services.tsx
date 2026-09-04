@@ -51,7 +51,7 @@ function ServicesPage() {
               <em className="font-display font-medium">end to end.</em>
             </>
           }
-          image="/images/project-3.jpg"
+          image="/Projects/Averyx%20Group,%20TECOM/WORKSTATION%20VIEW.png"
         >
           Comprehensive in-house design, engineering and delivery capabilities for commercial
           interiors across Dubai and the UAE.

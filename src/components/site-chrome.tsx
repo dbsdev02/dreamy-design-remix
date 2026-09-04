@@ -326,8 +326,8 @@ export function SiteHeader({ inverse = false }: { inverse?: boolean }) {
             style={{ animationDelay: "620ms" }}
           >
             <span>Al Jaddaf Avenue Building, Office 707, Dubai</span>
-            <a href="tel:+971585209636" className="link-underline">
-              +971 58 520 9636
+            <a href="tel:+971589102341" className="link-underline">
+              +971 58 910 2341
             </a>
             <a href="mailto:info@essentialsfnd.com" className="link-underline">
               info@essentialsfnd.com
@@ -379,8 +379,8 @@ export function SiteFooter() {
           <p>Office 707, Dubai, UAE</p>
         </div>
         <div className="md:col-span-2">
-          <a href="tel:+971585209636" className="link-underline block">
-            +971 58 520 9636
+          <a href="tel:+971589102341" className="link-underline block">
+            +971 58 910 2341
           </a>
           <a href="mailto:info@essentialsfnd.com" className="link-underline block">
             info@essentialsfnd.com

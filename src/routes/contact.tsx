@@ -26,7 +26,7 @@ export const Route = createFileRoute("/contact")({
 });
 
 const details: [string, string, string?][] = [
-  ["Phone", "+971 58 520 9636", "tel:+971585209636"],
+  ["Phone", "+971 58 910 2341", "tel:+971589102341"],
   ["Email", "info@essentialsfnd.com", "mailto:info@essentialsfnd.com"],
   ["Direct", "sanjana@essentialsfnd.ae", "mailto:sanjana@essentialsfnd.ae"],
   ["Address", "Al Jaddaf Avenue Building, Office 707, Dubai, UAE"],

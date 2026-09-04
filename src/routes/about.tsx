@@ -39,7 +39,7 @@ function AboutPage() {
               <em className="font-display font-medium">completed spaces.</em>
             </>
           }
-          image="/images/hero-alt.jpg"
+          image="/Projects/DHCX%20office/WhatsApp%20Image%202026-08-17%20at%2013.35.45.jpeg"
         >
           Essential Decor LLC is a full-service interior fit-out, design and build company. We
           transform commercial visions into completed spaces — managing design, procurement,
