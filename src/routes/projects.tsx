@@ -96,7 +96,7 @@ function ProjectsPage() {
 
       <section className="bg-primary px-8 py-24 text-primary-foreground md:px-16 md:py-32">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <h2 className="text-[clamp(2.4rem,5vw,4rem)] font-semibold leading-[.9] tracking-[-.03em]">
+          <h2 className="text-[clamp(1.9rem,3.6vw,2.9rem)] font-semibold leading-[1.08] tracking-[-.02em]">
             Want your project
             <br />
             <em className="font-display font-medium">on this page next year?</em>

@@ -66,7 +66,7 @@ function ProjectDetail() {
         </section>
         <section className="px-8 py-32 text-center md:px-16">
           <p className="text-xs font-semibold uppercase tracking-[.18em] text-accent">Not found</p>
-          <h1 className="mt-6 text-5xl font-semibold">That project isn’t here.</h1>
+          <h1 className="mt-6 text-4xl font-semibold">That project isn’t here.</h1>
           <Link
             to="/projects"
             className="link-underline mt-8 inline-flex items-center gap-2 text-sm font-semibold"
@@ -106,7 +106,7 @@ function ProjectDetail() {
         </nav>
         <div className="mt-6 flex flex-col justify-between gap-4 border-b border-border pb-8 md:flex-row md:items-end">
           <div>
-            <h1 className="text-[clamp(2.4rem,5vw,4.5rem)] font-semibold leading-[.9] tracking-[-.03em]">
+            <h1 className="text-[clamp(1.8rem,3.4vw,2.8rem)] font-semibold leading-[1.02] tracking-[-.02em]">
               {project.name}
             </h1>
             <p className="mt-3 text-sm uppercase tracking-[.16em] text-muted-foreground">
@@ -190,12 +190,15 @@ function ProjectDetail() {
         )}
       </section>
 
-      <section className="grid-lines px-8 py-24 text-center md:px-16 md:py-32">
+      <section
+        className="relative bg-cover bg-center px-8 py-24 text-center md:px-16 md:py-32"
+        style={{ backgroundImage: "url('/bg-3.jpg')" }}
+      >
         <Reveal className="mx-auto max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[.18em] text-accent">
             Have a similar space?
           </p>
-          <h2 className="mt-6 text-[clamp(2.4rem,5vw,4rem)] font-semibold leading-[.9] tracking-[-.03em]">
+          <h2 className="mt-6 text-[clamp(1.9rem,3.6vw,2.9rem)] font-semibold leading-[1.08] tracking-[-.02em]">
             Let’s talk about <em className="font-display font-medium">yours.</em>
           </h2>
           <Link

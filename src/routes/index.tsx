@@ -1,7 +1,8 @@
-import { ArrowDownRight, ArrowUpRight } from "lucide-react";
+import { ArrowDownRight, ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   CountUp,
+  HeroSlider,
   Marquee,
   Reveal,
   RevealWords,
@@ -9,8 +10,9 @@ import {
   SiteFooter,
   SiteHeader,
 } from "@/components/site-chrome";
+import { useEffect, useState } from "react";
 import { advantages, approvals, capabilities, sectors, stats, testimonials } from "@/lib/portfolio";
-import { getProject, projects } from "@/lib/projects";
+import { projectsByCategory, type Project } from "@/lib/projects";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -38,7 +40,23 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const featured = (getProject("averyx-group-office") ?? projects[0])!;
+const slideProjects = projectsByCategory.flatMap((c) => c.projects.slice(0, 2));
+
+const galleryImages = projectsByCategory
+  .flatMap((c) => c.projects.slice(0, 3))
+  .map((p) => ({ src: p.cover, alt: p.name }));
+
+const heroImages = [
+  "/heroimages/beautiful-shot-modern-style-open-space-office-interior.jpg",
+  "/heroimages/glenov-brankovic-e4B5AvA7Jqo-unsplash.jpg",
+  "/heroimages/stylish-beautiful-spacious-dental-clinic.jpg",
+  "/heroimages/hemant-kanojiya-BwIZxzt46I4-unsplash.jpg",
+  "/heroimages/phc-software-mo49QVLtAPI-unsplash.jpg",
+  "/heroimages/petr-magera-HuWm7malJ18-unsplash.jpg",
+  "/heroimages/T6.jpg",
+  "/heroimages/benyamin-bohlouli-LQ698TTvGpA-unsplash.jpg",
+  "/heroimages/ChatGPT Image Mar 6, 2026 at 02_05_12 PM.jpg",
+];
 
 const expertise = [
   {
@@ -53,6 +71,104 @@ const expertise = [
   },
 ];
 
+function ProjectsShowcase({ items }: { items: Project[] }) {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (items.length < 2) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const id = setInterval(() => setIndex((i) => (i + 1) % items.length), 6000);
+    return () => clearInterval(id);
+  }, [items.length]);
+
+  const project = items[index];
+  if (!project) return null;
+
+  return (
+    <>
+      <Reveal className="md:col-span-4 md:col-start-2">
+        <p className="text-xs font-semibold uppercase tracking-[.18em] text-accent">
+          Featured projects
+        </p>
+        <div key={project.slug} className="animate-rise-in">
+          <h2 className="mt-6 text-[clamp(1.8rem,3.4vw,2.6rem)] font-semibold leading-[1.08] tracking-[-.02em]">
+            {project.name}
+          </h2>
+          <p className="mt-3 text-xs uppercase tracking-[.16em] text-muted-foreground">
+            {project.location} · {project.year}
+          </p>
+          <p className="mt-8 max-w-sm text-sm leading-relaxed text-muted-foreground">
+            {project.blurb}
+          </p>
+          <Link
+            to="/projects/$slug"
+            params={{ slug: project.slug }}
+            className="group mt-10 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[.14em]"
+          >
+            View the project{" "}
+            <ArrowUpRight
+              size={16}
+              className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+            />
+          </Link>
+        </div>
+        <div className="mt-12 flex items-center gap-5">
+          <div className="flex items-center gap-2">
+            {items.map((p, i) => (
+              <button
+                key={p.slug}
+                aria-label={`Show ${p.name}`}
+                onClick={() => setIndex(i)}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  i === index ? "w-6 bg-accent" : "w-1.5 bg-border hover:bg-muted-foreground"
+                }`}
+              />
+            ))}
+          </div>
+          <span className="text-[11px] uppercase tracking-[.14em] text-muted-foreground">
+            {index + 1} / {items.length}
+          </span>
+        </div>
+      </Reveal>
+      <Reveal
+        delay={140}
+        className="group relative aspect-[1.1] overflow-hidden md:col-span-6 md:col-start-7"
+      >
+        {items.map((p, i) => (
+          <div
+            key={p.slug}
+            className="absolute inset-0 transition-opacity duration-[900ms] ease-in-out"
+            style={{ opacity: i === index ? 1 : 0, pointerEvents: i === index ? "auto" : "none" }}
+          >
+            <Link to="/projects/$slug" params={{ slug: p.slug }} className="block h-full w-full">
+              <img
+                src={p.cover}
+                alt={p.name}
+                loading="lazy"
+                className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+              />
+            </Link>
+          </div>
+        ))}
+        <button
+          aria-label="Previous project"
+          onClick={() => setIndex((i) => (i - 1 + items.length) % items.length)}
+          className="absolute left-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-background/80 p-2 text-foreground opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        >
+          <ArrowLeft size={18} />
+        </button>
+        <button
+          aria-label="Next project"
+          onClick={() => setIndex((i) => (i + 1) % items.length)}
+          className="absolute right-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-background/80 p-2 text-foreground opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        >
+          <ArrowRight size={18} />
+        </button>
+      </Reveal>
+    </>
+  );
+}
+
 function Index() {
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -63,31 +179,17 @@ function Index() {
       <ScrollProgress />
 
       <section className="relative mx-3 mt-3 min-h-[calc(100svh-24px)] overflow-hidden bg-primary text-primary-foreground">
-        <div className="absolute inset-0 animate-slow-zoom bg-[url('/images/hero.jpg')] bg-cover bg-center" />
+        <HeroSlider images={heroImages} />
         <div className="absolute inset-0 bg-primary/55" />
         <div className="absolute inset-0 grid-lines opacity-35" />
         <SiteHeader inverse />
         <div className="relative z-10 flex min-h-[calc(100svh-150px)] flex-col justify-end px-7 pb-12 md:px-10 md:pb-16">
-          <p className="animate-rise-in mb-6 text-xs font-semibold uppercase tracking-[.2em] text-primary-foreground/60">
-            Design-led · Function-focused · Future-ready
-          </p>
-          <h1 className="max-w-[900px] text-[clamp(2.3rem,5vw,4.8rem)] font-semibold leading-[.98] tracking-[-0.02em]">
+          <h1 className="max-w-[820px] text-[clamp(1.9rem,4vw,3.6rem)] font-semibold leading-[1.15] tracking-[-0.02em]">
             <RevealWords text="Commercial spaces where" step={80} />{" "}
-            <RevealWords
-              text="design, function and business purpose"
-              className="font-display font-medium italic"
-              delay={260}
-              step={70}
-            />{" "}
+            <RevealWords text="design, function and business purpose" delay={260} step={70} />
+            {" "}
             <RevealWords text="align." delay={720} />
           </h1>
-          <Reveal
-            className="mt-8 max-w-xl text-base leading-relaxed text-primary-foreground/70"
-            delay={600}
-          >
-            Interior fit-out, design and build — managed through one accountable process, from
-            concept and approvals to construction, installation and handover.
-          </Reveal>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link
               to="/contact"
@@ -120,7 +222,7 @@ function Index() {
           <p className="text-xs font-semibold uppercase tracking-[.18em] text-accent">
             About Essential Decor
           </p>
-          <p className="mt-8 text-[clamp(1.5rem,3vw,2.4rem)] font-medium leading-[1.3] tracking-[-.01em]">
+          <p className="mt-8 text-[clamp(1.2rem,2.2vw,1.7rem)] font-medium leading-[1.4] tracking-[-.01em]">
             Essential Decor LLC is a full-service interior fit-out, design and build company. We
             transform commercial visions into completed spaces — managing design, procurement,
             approvals coordination, construction, installation and handover through one accountable
@@ -139,7 +241,7 @@ function Index() {
         <div className="grid grid-cols-2 gap-x-8 gap-y-12 md:grid-cols-5">
           {stats.map((stat, i) => (
             <Reveal key={stat.label} delay={i * 100}>
-              <div className="font-display text-[clamp(2.4rem,5vw,3.8rem)] leading-[.8]">
+              <div className="font-display text-[clamp(1.9rem,3.6vw,2.8rem)] leading-[1.08]">
                 <CountUp
                   value={stat.value}
                   suffix={stat.suffix}
@@ -161,17 +263,17 @@ function Index() {
             <p className="text-xs font-semibold uppercase tracking-[.18em] text-accent">
               Our expertise
             </p>
-            <h2 className="mt-5 text-[clamp(3rem,6vw,7rem)] font-semibold leading-[.82] tracking-[-.04em]">
+            <h2 className="mt-5 text-[clamp(2.1rem,4.2vw,4rem)] font-semibold leading-[1.08] tracking-[-.03em]">
               Fit-out, design <em className="font-display font-medium">&amp; build.</em>
             </h2>
           </div>
-          <ArrowDownRight className="hidden md:block" size={38} strokeWidth={1} />
+          <ArrowDownRight className="hidden md:block" size={28} strokeWidth={1} />
         </Reveal>
         <div className="grid grid-cols-1 gap-x-10 gap-y-16 md:grid-cols-2">
           {expertise.map((item, i) => (
             <Reveal key={item.number} delay={i * 120} className="border-t border-border pt-6">
               <span className="text-xs text-accent">{item.number}</span>
-              <h3 className="mt-6 font-display text-4xl italic">{item.title}</h3>
+              <h3 className="mt-6 font-display text-3xl italic">{item.title}</h3>
               <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">
                 {item.text}
               </p>
@@ -193,7 +295,7 @@ function Index() {
           {capabilities.map((item) => (
             <span
               key={item}
-              className="mx-6 inline-flex items-center gap-6 font-display text-2xl italic md:text-4xl"
+              className="mx-6 inline-flex items-center gap-6 font-display text-lg italic md:text-2xl"
             >
               {item}
               <span className="text-accent">✦</span>
@@ -207,7 +309,7 @@ function Index() {
           <p className="text-xs font-semibold uppercase tracking-[.18em] text-accent">
             Sectors we serve
           </p>
-          <h2 className="mt-5 text-[clamp(2.6rem,5vw,5rem)] font-semibold leading-[.84] tracking-[-.03em]">
+          <h2 className="mt-5 text-[clamp(1.9rem,3.6vw,2.9rem)] font-semibold leading-[1.08] tracking-[-.02em]">
             Delivering excellence <em className="font-display font-medium">across every sector.</em>
           </h2>
           <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
@@ -233,57 +335,45 @@ function Index() {
         </div>
       </section>
 
-      <section className="grid grid-cols-1 gap-12 bg-secondary px-8 py-24 md:grid-cols-12 md:px-16 md:py-36">
-        <Reveal className="md:col-span-4 md:col-start-2">
+      <section className="border-y border-border bg-secondary py-16">
+        <Reveal className="mb-10 px-8 md:px-16">
           <p className="text-xs font-semibold uppercase tracking-[.18em] text-accent">
-            Featured project
+            A closer look
           </p>
-          <h2 className="mt-6 text-[clamp(2.4rem,4.5vw,4rem)] font-semibold leading-[.88] tracking-[-.03em]">
-            {featured.name}
+          <h2 className="mt-4 text-[clamp(1.9rem,3.6vw,2.9rem)] font-semibold leading-[1.08] tracking-[-.02em]">
+            Inside the spaces <em className="font-display font-medium">we've built.</em>
           </h2>
-          <p className="mt-3 text-xs uppercase tracking-[.16em] text-muted-foreground">
-            {featured.location} · {featured.year}
-          </p>
-          <p className="mt-8 max-w-sm text-sm leading-relaxed text-muted-foreground">
-            {featured.blurb}
-          </p>
-          <Link
-            to="/projects/$slug"
-            params={{ slug: featured.slug }}
-            className="group mt-10 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[.14em]"
-          >
-            View the project{" "}
-            <ArrowUpRight
-              size={16}
-              className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-            />
-          </Link>
         </Reveal>
-        <Reveal
-          delay={140}
-          className="group relative aspect-[1.1] overflow-hidden md:col-span-6 md:col-start-7"
-        >
-          <Link
-            to="/projects/$slug"
-            params={{ slug: featured.slug }}
-            className="block h-full w-full"
-          >
-            <img
-              src={featured.cover}
-              alt={featured.name}
-              loading="lazy"
-              className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
-            />
-          </Link>
-        </Reveal>
+        <Marquee speed={46}>
+          {galleryImages.map((img) => (
+            <div
+              key={img.src}
+              className="mx-3 h-64 w-48 shrink-0 overflow-hidden md:h-80 md:w-60"
+            >
+              <img
+                src={img.src}
+                alt={img.alt}
+                loading="lazy"
+                className="h-full w-full object-cover"
+              />
+            </div>
+          ))}
+        </Marquee>
       </section>
 
-      <section className="px-8 py-24 md:px-16 md:py-36">
+      <section className="grid grid-cols-1 gap-12 px-8 py-24 md:grid-cols-12 md:px-16 md:py-36">
+        <ProjectsShowcase items={slideProjects} />
+      </section>
+
+      <section
+        className="relative bg-cover bg-center px-8 py-24 md:px-16 md:py-36"
+        style={{ backgroundImage: "url('/bg-3.jpg')" }}
+      >
         <Reveal className="mb-16 max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[.18em] text-accent">
             Our advantages
           </p>
-          <h2 className="mt-5 text-[clamp(2.6rem,5vw,5rem)] font-semibold leading-[.84] tracking-[-.03em]">
+          <h2 className="mt-5 text-[clamp(1.9rem,3.6vw,2.9rem)] font-semibold leading-[1.08] tracking-[-.02em]">
             Why clients <em className="font-display font-medium">choose us.</em>
           </h2>
         </Reveal>
@@ -307,7 +397,7 @@ function Index() {
         <div className="mt-14 grid grid-cols-1 gap-12 border-t border-primary-foreground/20 pt-12 md:grid-cols-2">
           {testimonials.map((item, i) => (
             <Reveal key={item.name} delay={i * 150}>
-              <p className="font-display text-2xl italic leading-snug md:text-[1.7rem]">
+              <p className="font-display text-xl italic leading-snug md:text-[1.4rem]">
                 “{item.quote}”
               </p>
               <p className="mt-8 text-xs uppercase tracking-[.16em] text-primary-foreground/60">
@@ -337,7 +427,7 @@ function Index() {
           <p className="text-xs font-semibold uppercase tracking-[.18em] text-accent">
             Let’s work together
           </p>
-          <h2 className="mt-7 text-[clamp(2.8rem,6.5vw,6.5rem)] font-semibold leading-[.84] tracking-[-.04em]">
+          <h2 className="mt-7 text-[clamp(2rem,4.4vw,3.6rem)] font-semibold leading-[1.08] tracking-[-.02em]">
             Create your
             <br />
             <em className="font-display font-medium">dream property.</em>

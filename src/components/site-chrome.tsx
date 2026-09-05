@@ -187,6 +187,41 @@ export function Marquee({
   );
 }
 
+/** Full-bleed background slideshow — cross-fades through a set of images on a timer. */
+export function HeroSlider({
+  images,
+  interval = 5500,
+}: {
+  images: string[];
+  interval?: number;
+}) {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (images.length < 2) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const id = setInterval(() => setIndex((i) => (i + 1) % images.length), interval);
+    return () => clearInterval(id);
+  }, [images.length, interval]);
+
+  return (
+    <div className="absolute inset-0" aria-hidden={true}>
+      {images.map((src, i) => (
+        <div
+          key={src}
+          className="absolute inset-0 transition-opacity duration-[1800ms] ease-in-out"
+          style={{ opacity: i === index ? 1 : 0 }}
+        >
+          <div
+            className="animate-slow-zoom h-full w-full bg-cover bg-center"
+            style={{ backgroundImage: `url('${encodeURI(src)}')` }}
+          />
+        </div>
+      ))}
+    </div>
+  );
+}
+
 /** Thin scroll-progress bar fixed to the top of the viewport. */
 export function ScrollProgress() {
   const [progress, setProgress] = useState(0);
@@ -246,12 +281,12 @@ export function SiteHeader({ inverse = false }: { inverse?: boolean }) {
       <Link
         to="/"
         aria-label="Essential Decor — home"
-        className="absolute left-[88px] top-0 md:left-28"
+        className="absolute left-[88px] top-1/2 -translate-y-1/2 md:left-28"
       >
         <img
-          src="/logo-ed.png"
+          src="/logo-horizontal.png"
           alt="Essential Decor LLC — Interior Fitout, Design & Build"
-          className={`h-[68px] w-auto md:h-[92px] ${inverse ? "brightness-0 invert" : ""}`}
+          className={`h-8 w-auto md:h-11 ${inverse ? "brightness-0 invert" : ""}`}
         />
       </Link>
 
@@ -283,9 +318,9 @@ export function SiteHeader({ inverse = false }: { inverse?: boolean }) {
           <div className="flex items-start justify-between">
             <Link to="/" onClick={() => setMenuOpen(false)} aria-label="Essential Decor — home">
               <img
-                src="/logo-ed.png"
+                src="/logo-horizontal.png"
                 alt="Essential Decor LLC"
-                className="h-16 w-auto brightness-0 invert md:h-20"
+                className="h-9 w-auto brightness-0 invert md:h-12"
               />
             </Link>
             <Button
@@ -347,7 +382,7 @@ export function SiteFooter() {
           <p className="text-xs font-semibold uppercase tracking-[.18em] text-accent">
             Let’s work together
           </p>
-          <h2 className="mt-6 text-[clamp(3.4rem,7vw,7rem)] font-semibold leading-[.8]">
+          <h2 className="mt-6 text-[clamp(2rem,4.2vw,3.4rem)] font-semibold leading-[1.02]">
             Create your
             <br />
             <em className="font-display font-medium">dream property.</em>
@@ -369,9 +404,9 @@ export function SiteFooter() {
       <div className="mt-20 grid grid-cols-1 gap-6 border-t border-border pt-7 text-xs text-muted-foreground md:grid-cols-12">
         <Link to="/" aria-label="Essential Decor — home" className="md:col-span-3 md:col-start-2">
           <img
-            src="/logo-ed.png"
+            src="/logo-horizontal.png"
             alt="Essential Decor LLC — Interior Fitout, Design & Build"
-            className="h-24 w-auto"
+            className="h-9 w-auto md:h-11"
           />
         </Link>
         <div className="md:col-span-3 md:pt-2">
@@ -417,13 +452,16 @@ export function PageIntro({
   image?: string;
 }) {
   return (
-    <section className="grid min-h-[520px] grid-cols-1 items-end gap-12 bg-secondary px-8 pb-16 pt-12 md:grid-cols-12 md:px-16 md:pb-24">
+    <section
+      className="relative grid min-h-[520px] grid-cols-1 items-end gap-12 bg-secondary bg-cover bg-center px-8 pb-16 pt-12 md:grid-cols-12 md:px-16 md:pb-24"
+      style={{ backgroundImage: "url('/bg-3.jpg')" }}
+    >
       <div className="md:col-span-7 md:col-start-2">
         <p className="animate-rise-in text-xs font-semibold uppercase tracking-[.18em] text-accent">
           {eyebrow}
         </p>
         <h1
-          className="animate-rise-in mt-7 max-w-4xl text-[clamp(3rem,6.5vw,7rem)] font-semibold leading-[.85] tracking-[-.03em]"
+          className="animate-rise-in mt-7 max-w-3xl text-[clamp(2rem,4.2vw,3.4rem)] font-semibold leading-[1.05] tracking-[-.02em] text-foreground"
           style={{ animationDelay: "120ms" }}
         >
           {title}

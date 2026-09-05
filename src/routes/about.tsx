@@ -39,7 +39,6 @@ function AboutPage() {
               <em className="font-display font-medium">completed spaces.</em>
             </>
           }
-          image="/Projects/DHCX%20office/WhatsApp%20Image%202026-08-17%20at%2013.35.45.jpeg"
         >
           Essential Decor LLC is a full-service interior fit-out, design and build company. We
           transform commercial visions into completed spaces — managing design, procurement,
@@ -48,12 +47,23 @@ function AboutPage() {
         </PageIntro>
       </section>
 
+      <section className="px-8 pt-16 md:px-16 md:pt-20">
+        <Reveal className="aspect-[21/9] w-full overflow-hidden">
+          <img
+            src="/Projects/DHCX%20office/WhatsApp%20Image%202026-08-17%20at%2013.35.45.jpeg"
+            alt="Essential Decor interior fit-out detail"
+            loading="lazy"
+            className="h-full w-full object-cover"
+          />
+        </Reveal>
+      </section>
+
       <section className="grid grid-cols-1 gap-16 px-8 py-24 md:grid-cols-12 md:px-16 md:py-36">
         <Reveal className="md:col-span-4 md:col-start-2">
           <p className="text-xs font-semibold uppercase tracking-[.18em] text-accent">
             Our position
           </p>
-          <h2 className="mt-7 text-4xl font-semibold leading-[.9] md:text-6xl">
+          <h2 className="mt-7 text-[clamp(1.8rem,3.4vw,2.6rem)] font-semibold leading-[1.1]">
             Design-led.
             <br />
             Function-focused.
@@ -88,7 +98,7 @@ function AboutPage() {
             <p className="text-xs font-semibold uppercase tracking-[.18em] text-accent">
               Our advantages
             </p>
-            <h2 className="mt-5 text-5xl font-semibold leading-[.82] md:text-7xl">
+            <h2 className="mt-5 text-[clamp(1.9rem,3.6vw,2.9rem)] font-semibold leading-[1.08]">
               Why clients
               <br />
               <em className="font-display font-medium">choose us.</em>
@@ -117,7 +127,7 @@ function AboutPage() {
           <p className="text-xs font-semibold uppercase tracking-[.18em] text-accent">
             Sectors we serve
           </p>
-          <h2 className="mt-5 text-5xl font-semibold leading-[.82] md:text-7xl">
+          <h2 className="mt-5 text-[clamp(1.9rem,3.6vw,2.9rem)] font-semibold leading-[1.08]">
             Delivering excellence
             <br />
             <em className="font-display font-medium">across every sector.</em>

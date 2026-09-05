@@ -51,7 +51,6 @@ function ServicesPage() {
               <em className="font-display font-medium">end to end.</em>
             </>
           }
-          image="/Projects/Averyx%20Group,%20TECOM/WORKSTATION%20VIEW.png"
         >
           Comprehensive in-house design, engineering and delivery capabilities for commercial
           interiors across Dubai and the UAE.
@@ -63,7 +62,7 @@ function ServicesPage() {
           {leadServices.map((item, i) => (
             <Reveal key={item.number} delay={i * 120} className="border-t border-border pt-6">
               <span className="text-xs text-accent">{item.number}</span>
-              <h2 className="mt-6 font-display text-5xl italic">{item.title}</h2>
+              <h2 className="mt-6 font-display text-3xl italic md:text-4xl">{item.title}</h2>
               <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground">
                 {item.text}
               </p>
@@ -77,7 +76,7 @@ function ServicesPage() {
           <p className="text-xs font-semibold uppercase tracking-[.18em] text-accent">
             Full-spectrum capabilities
           </p>
-          <h2 className="mt-5 text-[clamp(2.4rem,5vw,4.5rem)] font-semibold leading-[.86] tracking-[-.03em]">
+          <h2 className="mt-5 text-[clamp(1.9rem,3.6vw,2.9rem)] font-semibold leading-[1.08] tracking-[-.02em]">
             One team, <em className="font-display font-medium">every trade.</em>
           </h2>
         </Reveal>
@@ -100,7 +99,7 @@ function ServicesPage() {
           <p className="text-xs font-semibold uppercase tracking-[.18em] text-accent">
             Our approach
           </p>
-          <h2 className="mt-5 text-[clamp(2.6rem,5vw,5rem)] font-semibold leading-[.84] tracking-[-.03em]">
+          <h2 className="mt-5 text-[clamp(1.9rem,3.6vw,2.9rem)] font-semibold leading-[1.08] tracking-[-.02em]">
             How the work <em className="font-display font-medium">gets done.</em>
           </h2>
         </Reveal>
@@ -117,7 +116,7 @@ function ServicesPage() {
 
       <section className="bg-primary px-8 py-24 text-primary-foreground md:px-16 md:py-32">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <h2 className="text-[clamp(2.4rem,5vw,4rem)] font-semibold leading-[.9] tracking-[-.03em]">
+          <h2 className="text-[clamp(1.9rem,3.6vw,2.9rem)] font-semibold leading-[1.08] tracking-[-.02em]">
             Not sure where
             <br />
             <em className="font-display font-medium">your project starts?</em>

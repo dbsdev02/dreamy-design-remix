@@ -52,7 +52,6 @@ function ContactPage() {
               <em className="font-display font-medium">create your dream property.</em>
             </>
           }
-          image="/images/hero.jpg"
         >
           Tell us what the space needs to do, who’ll use it, and what’s non-negotiable. We’ll come
           back within 48 hours to arrange an initial conversation.
@@ -88,7 +87,7 @@ function ContactPage() {
           {sent ? (
             <div className="border-t border-border pt-6">
               <Check className="text-accent" size={28} strokeWidth={1.5} />
-              <h2 className="mt-7 text-4xl font-semibold leading-[.9]">Got it.</h2>
+              <h2 className="mt-7 text-4xl font-semibold leading-[1.08]">Got it.</h2>
               <p className="mt-7 max-w-sm text-sm leading-relaxed text-muted-foreground">
                 Someone from the team will be in touch within one business day.
               </p>
