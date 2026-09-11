@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight, Facebook, Instagram, Linkedin, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState, type ElementType, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 
@@ -222,6 +222,40 @@ export function HeroSlider({
   );
 }
 
+/** Inline WhatsApp glyph — lucide-react ships no brand icons. */
+function WhatsAppIcon({ size = 26 }: { size?: number }) {
+  return (
+    <svg viewBox="0 0 32 32" width={size} height={size} fill="currentColor" aria-hidden={true}>
+      <path d="M16.004 3C9.377 3 4 8.373 4 15c0 2.31.638 4.474 1.75 6.325L4 29l7.86-1.71A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.627 28 15S22.63 3 16.004 3Zm0 21.818c-1.97 0-3.86-.53-5.51-1.53l-.395-.233-4.66 1.014 1.03-4.53-.256-.406A9.77 9.77 0 0 1 4.727 15c0-6.234 5.073-11.273 11.277-11.273 6.204 0 11.273 5.04 11.273 11.273 0 6.234-5.07 11.273-11.273 11.273Zm6.22-8.45c-.34-.17-2.01-.99-2.322-1.104-.312-.114-.54-.17-.767.17-.227.34-.878 1.104-1.077 1.33-.198.227-.396.256-.735.086-.34-.17-1.434-.528-2.732-1.685-1.01-.9-1.692-2.012-1.89-2.352-.198-.34-.021-.523.15-.692.154-.153.34-.397.51-.595.17-.198.227-.34.34-.567.113-.227.057-.425-.028-.595-.085-.17-.767-1.85-1.052-2.533-.277-.665-.56-.575-.767-.585l-.653-.012c-.227 0-.595.085-.907.425-.312.34-1.19 1.163-1.19 2.836 0 1.673 1.219 3.29 1.389 3.517.17.227 2.399 3.663 5.814 5.138.812.35 1.446.559 1.94.716.815.26 1.556.223 2.142.135.653-.098 2.01-.822 2.293-1.615.283-.793.283-1.472.198-1.615-.085-.142-.312-.227-.652-.397Z" />
+    </svg>
+  );
+}
+
+/** Fixed floating button that opens a WhatsApp chat — present on every page. */
+export function WhatsAppButton() {
+  return (
+    <a
+      href="https://wa.me/971589102341"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat with us on WhatsApp"
+      className="fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform duration-300 hover:scale-110"
+    >
+      <WhatsAppIcon />
+    </a>
+  );
+}
+
+const socialLinks = [
+  { label: "LinkedIn", href: "https://ae.linkedin.com/company/essential-decor-llc", icon: Linkedin },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/p/Essential-Decor-LLC-61578222913679/",
+    icon: Facebook,
+  },
+  { label: "Instagram", href: "https://www.instagram.com/essentialdecorllc/", icon: Instagram },
+];
+
 /** Thin scroll-progress bar fixed to the top of the viewport. */
 export function ScrollProgress() {
   const [progress, setProgress] = useState(0);
@@ -249,7 +283,8 @@ const navItems = [
   { number: "02", label: "About", to: "/about" as const },
   { number: "03", label: "Services", to: "/services" as const },
   { number: "04", label: "Projects", to: "/projects" as const },
-  { number: "05", label: "Contact", to: "/contact" as const },
+  { number: "05", label: "Blogs", to: "/blogs" as const },
+  { number: "06", label: "Contact", to: "/contact" as const },
 ];
 
 export function SiteHeader({ inverse = false }: { inverse?: boolean }) {
@@ -304,13 +339,6 @@ export function SiteHeader({ inverse = false }: { inverse?: boolean }) {
             <span className="mr-1 align-top text-[9px]">{item.number}</span> {item.label}
           </Link>
         ))}
-        <Button
-          asChild
-          variant={inverse ? "secondary" : "default"}
-          className="ml-1 h-12 px-7 font-semibold transition-transform duration-300 hover:-translate-y-0.5"
-        >
-          <Link to="/contact">Start the conversation</Link>
-        </Button>
       </nav>
 
       {menuOpen && (
@@ -374,9 +402,9 @@ export function SiteHeader({ inverse = false }: { inverse?: boolean }) {
   );
 }
 
-export function SiteFooter() {
+export function SiteFooter({ showCta = true }: { showCta?: boolean }) {
   return (
-    <footer className="grid-lines border-t border-border px-8 py-16 md:px-16 md:py-24">
+    <footer className="border-t border-border px-8 py-16 md:px-16 md:py-24">
       <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
         <Reveal className="md:col-span-5 md:col-start-2">
           <p className="text-xs font-semibold uppercase tracking-[.18em] text-accent">
@@ -388,17 +416,19 @@ export function SiteFooter() {
             <em className="font-display font-medium">dream property.</em>
           </h2>
         </Reveal>
-        <Reveal delay={120} className="md:col-span-3 md:col-start-9 md:pt-16">
-          <p className="text-sm leading-relaxed text-muted-foreground">
-            Tell us what the space needs to do — we’ll come back within 48 hours.
-          </p>
-          <Link
-            to="/contact"
-            className="link-underline mt-8 inline-flex items-center gap-3 border-b border-foreground pb-2 text-sm font-semibold"
-          >
-            Start the conversation <ArrowUpRight size={16} />
-          </Link>
-        </Reveal>
+        {showCta && (
+          <Reveal delay={120} className="md:col-span-3 md:col-start-9 md:pt-16">
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              Tell us what the space needs to do — we’ll come back within 48 hours.
+            </p>
+            <Link
+              to="/contact"
+              className="link-underline mt-8 inline-flex items-center gap-3 border-b border-foreground pb-2 text-sm font-semibold"
+            >
+              Start the conversation <ArrowUpRight size={16} />
+            </Link>
+          </Reveal>
+        )}
       </div>
 
       <div className="mt-20 grid grid-cols-1 gap-6 border-t border-border pt-7 text-xs text-muted-foreground md:grid-cols-12">
@@ -427,8 +457,22 @@ export function SiteFooter() {
         </div>
       </div>
 
-      <div className="mt-10 flex flex-col justify-between gap-4 text-xs text-muted-foreground md:flex-row">
+      <div className="mt-10 flex flex-col gap-6 border-t border-border pt-7 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between">
         <span>© 2026 Essential Decor. All rights reserved.</span>
+        <div className="flex items-center gap-4">
+          {socialLinks.map(({ label, href, icon: Icon }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-border transition-colors hover:border-foreground hover:text-foreground"
+            >
+              <Icon size={15} strokeWidth={1.5} />
+            </a>
+          ))}
+        </div>
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="inline-flex items-center gap-2 text-left transition-colors hover:text-foreground"

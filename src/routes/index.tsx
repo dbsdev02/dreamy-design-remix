@@ -10,8 +10,23 @@ import {
   SiteFooter,
   SiteHeader,
 } from "@/components/site-chrome";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { useEffect, useState } from "react";
-import { advantages, approvals, capabilities, sectors, stats, testimonials } from "@/lib/portfolio";
+import {
+  advantages,
+  approvals,
+  capabilities,
+  faqs,
+  sectors,
+  stats,
+  testimonials,
+} from "@/lib/portfolio";
+import { clientLogos } from "@/lib/clients";
 import { projectsByCategory, type Project } from "@/lib/projects";
 
 export const Route = createFileRoute("/")({
@@ -388,6 +403,24 @@ function Index() {
         </div>
       </section>
 
+      <section className="border-y border-border py-14">
+        <Reveal className="mb-8 px-8 md:px-16">
+          <p className="text-xs font-semibold uppercase tracking-[.18em] text-accent">
+            Trusted by
+          </p>
+        </Reveal>
+        <Marquee speed={38}>
+          {clientLogos.map((logo) => (
+            <div
+              key={logo}
+              className="mx-4 flex h-20 w-40 shrink-0 items-center justify-center border border-border bg-card p-4 grayscale transition-[filter] duration-300 hover:grayscale-0"
+            >
+              <img src={logo} alt="Client logo" loading="lazy" className="max-h-full max-w-full object-contain" />
+            </div>
+          ))}
+        </Marquee>
+      </section>
+
       <section className="bg-primary px-8 py-24 text-primary-foreground md:px-16 md:py-36">
         <Reveal>
           <p className="text-xs font-semibold uppercase tracking-[.18em] text-accent">
@@ -408,18 +441,48 @@ function Index() {
         </div>
       </section>
 
-      <section className="px-8 py-16 md:px-16 md:py-20">
-        <Reveal className="border-y border-border py-10">
+      <section className="px-8 py-24 md:px-16 md:py-36">
+        <Reveal className="mb-16 max-w-2xl">
+          <p className="text-xs font-semibold uppercase tracking-[.18em] text-accent">
+            FAQs
+          </p>
+          <h2 className="mt-5 text-[clamp(1.9rem,3.6vw,2.9rem)] font-semibold leading-[1.08] tracking-[-.02em]">
+            Questions, <em className="font-display font-medium">answered.</em>
+          </h2>
+        </Reveal>
+        <Reveal delay={100} className="md:mx-auto md:max-w-3xl">
+          <Accordion type="single" collapsible className="border-t border-border">
+            {faqs.map((item) => (
+              <AccordionItem key={item.question} value={item.question}>
+                <AccordionTrigger className="py-6 text-left text-base font-semibold hover:no-underline md:text-lg">
+                  {item.question}
+                </AccordionTrigger>
+                <AccordionContent className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
+                  {item.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </Reveal>
+      </section>
+
+      <section className="border-y border-border py-14">
+        <Reveal className="mb-8 px-8 md:px-16">
           <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
             Registered and approved to undertake interior fit-out, design and related commercial
             works across Dubai and the UAE.
           </p>
-          <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-xs font-semibold uppercase tracking-[.14em] text-foreground/70">
-            {approvals.map((name) => (
-              <span key={name}>{name}</span>
-            ))}
-          </div>
         </Reveal>
+        <Marquee speed={30}>
+          {approvals.map((name) => (
+            <span
+              key={name}
+              className="mx-3 inline-flex items-center whitespace-nowrap rounded-full border border-border px-7 py-3.5 text-sm font-semibold uppercase tracking-[.1em] text-foreground/80 md:text-base"
+            >
+              {name}
+            </span>
+          ))}
+        </Marquee>
       </section>
 
       <section className="grid-lines px-8 py-28 md:px-16 md:py-40">

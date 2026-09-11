@@ -1,6 +1,13 @@
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { PageIntro, PageShell, Reveal, SiteFooter, SiteHeader } from "@/components/site-chrome";
+import {
+  Marquee,
+  PageIntro,
+  PageShell,
+  Reveal,
+  SiteFooter,
+  SiteHeader,
+} from "@/components/site-chrome";
 import { advantages, approvals, sectors } from "@/lib/portfolio";
 
 export const Route = createFileRoute("/about")({
@@ -152,8 +159,8 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-primary px-8 py-24 text-primary-foreground md:px-16 md:py-32">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
+      <section className="bg-primary py-24 text-primary-foreground md:py-32">
+        <div className="grid grid-cols-1 gap-12 px-8 md:grid-cols-12 md:px-16">
           <Reveal className="md:col-span-4 md:col-start-2">
             <p className="text-xs font-semibold uppercase tracking-[.18em] text-accent">
               Trade licence & approvals
@@ -164,18 +171,25 @@ function AboutPage() {
               Registered and approved to undertake interior fit-out, design and related commercial
               works across Dubai and the UAE.
             </p>
-            <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 border-t border-primary-foreground/20 pt-6 text-xs font-semibold uppercase tracking-[.14em] text-primary-foreground/70">
-              {approvals.map((name) => (
-                <span key={name}>{name}</span>
-              ))}
-            </div>
             <Link
               to="/contact"
-              className="link-underline mt-10 inline-flex items-center gap-3 border-b border-primary-foreground pb-2 text-xs font-semibold uppercase tracking-[.14em]"
+              className="link-underline mt-8 inline-flex items-center gap-3 border-b border-primary-foreground pb-2 text-xs font-semibold uppercase tracking-[.14em]"
             >
               Work with us <ArrowUpRight size={16} />
             </Link>
           </Reveal>
+        </div>
+        <div className="mt-14 border-t border-primary-foreground/20 pt-8">
+          <Marquee speed={30}>
+            {approvals.map((name) => (
+              <span
+                key={name}
+                className="mx-3 inline-flex items-center whitespace-nowrap rounded-full border border-primary-foreground/25 px-7 py-3.5 text-sm font-semibold uppercase tracking-[.1em] text-primary-foreground/80 md:text-base"
+              >
+                {name}
+              </span>
+            ))}
+          </Marquee>
         </div>
       </section>
 

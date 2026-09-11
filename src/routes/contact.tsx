@@ -1,7 +1,4 @@
-import { ArrowUpRight, Check } from "lucide-react";
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { PageIntro, PageShell, Reveal, SiteFooter, SiteHeader } from "@/components/site-chrome";
 
 export const Route = createFileRoute("/contact")({
@@ -33,12 +30,7 @@ const details: [string, string, string?][] = [
   ["Hours", "Mon–Fri 8AM–6PM · Sat 8AM–2PM"],
 ];
 
-const inputClass =
-  "mt-3 block w-full border-b border-border bg-transparent pb-3 text-base font-sans normal-case tracking-normal outline-none focus:border-accent";
-
 function ContactPage() {
-  const [sent, setSent] = useState(false);
-
   return (
     <PageShell>
       <section className="bg-primary text-primary-foreground">
@@ -84,73 +76,22 @@ function ContactPage() {
         </Reveal>
 
         <Reveal delay={140} className="md:col-span-5 md:col-start-8">
-          {sent ? (
-            <div className="border-t border-border pt-6">
-              <Check className="text-accent" size={28} strokeWidth={1.5} />
-              <h2 className="mt-7 text-4xl font-semibold leading-[1.08]">Got it.</h2>
-              <p className="mt-7 max-w-sm text-sm leading-relaxed text-muted-foreground">
-                Someone from the team will be in touch within one business day.
-              </p>
-            </div>
-          ) : (
-            <form
-              onSubmit={(event) => {
-                event.preventDefault();
-                setSent(true);
-              }}
-              className="space-y-8"
-            >
-              <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-                <label className="text-xs font-semibold uppercase tracking-[.14em]">
-                  Your name
-                  <input required name="name" className={inputClass} />
-                </label>
-                <label className="text-xs font-semibold uppercase tracking-[.14em]">
-                  Company (optional)
-                  <input name="company" className={inputClass} />
-                </label>
-              </div>
-              <label className="block text-xs font-semibold uppercase tracking-[.14em]">
-                What are we building?
-                <select
-                  required
-                  name="type"
-                  className={`${inputClass} appearance-none`}
-                  defaultValue=""
-                >
-                  <option value="" disabled>
-                    Select one
-                  </option>
-                  <option value="commercial">Commercial / office</option>
-                  <option value="hospitality">Hospitality / F&amp;B</option>
-                  <option value="retail">Retail</option>
-                  <option value="healthcare">Wellness / healthcare</option>
-                  <option value="institutional">Institutional</option>
-                  <option value="other">Other</option>
-                </select>
-              </label>
-              <label className="block text-xs font-semibold uppercase tracking-[.14em]">
-                A little about the space
-                <textarea
-                  required
-                  name="message"
-                  rows={5}
-                  className={`${inputClass} resize-none`}
-                />
-              </label>
-              <label className="block text-xs font-semibold uppercase tracking-[.14em]">
-                Best way to reach you
-                <input required name="reach" className={inputClass} />
-              </label>
-              <Button type="submit" className="h-12 px-7">
-                Send it over <ArrowUpRight size={16} />
-              </Button>
-            </form>
-          )}
+          <p className="text-xs font-semibold uppercase tracking-[.18em] text-accent">
+            Find us
+          </p>
+          <div className="mt-8 aspect-[4/3] w-full overflow-hidden border border-border">
+            <iframe
+              title="Essential Decor LLC location"
+              src="https://www.google.com/maps?q=Al+Jaddaf+Avenue+Building,+Dubai,+UAE&output=embed"
+              className="h-full w-full grayscale"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
         </Reveal>
       </section>
 
-      <SiteFooter />
+      <SiteFooter showCta={false} />
     </PageShell>
   );
 }
