@@ -190,14 +190,16 @@ function Index() {
   };
 
   return (
-    <main className="animate-page-in overflow-hidden bg-background">
+    <main className="animate-page-in bg-background">
       <ScrollProgress />
+      <SiteHeader inverse />
 
-      <section className="relative mx-3 mt-3 min-h-[calc(100svh-24px)] overflow-hidden bg-primary text-primary-foreground">
-        <HeroSlider images={heroImages} />
-        <div className="absolute inset-0 bg-primary/55" />
-        <div className="absolute inset-0 grid-lines opacity-35" />
-        <SiteHeader inverse />
+      <section className="relative mx-3 min-h-screen bg-primary text-primary-foreground">
+        <div className="absolute inset-0 overflow-hidden">
+          <HeroSlider images={heroImages} />
+          <div className="absolute inset-0 bg-primary/55" />
+          <div className="absolute inset-0 grid-lines opacity-35" />
+        </div>
         <div className="relative z-10 flex min-h-[calc(100svh-150px)] flex-col justify-end px-7 pb-12 md:px-10 md:pb-16">
           <h1 className="max-w-[820px] text-[clamp(1.9rem,4vw,3.6rem)] font-semibold leading-[1.15] tracking-[-0.02em]">
             <RevealWords text="Commercial spaces where" step={80} />{" "}

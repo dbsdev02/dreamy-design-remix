@@ -163,7 +163,7 @@ function AboutPage() {
         <div className="grid grid-cols-1 gap-12 px-8 md:grid-cols-12 md:px-16">
           <Reveal className="md:col-span-4 md:col-start-2">
             <p className="text-xs font-semibold uppercase tracking-[.18em] text-accent">
-              Trade licence & approvals
+              Authority Approvals
             </p>
           </Reveal>
           <Reveal delay={140} className="md:col-span-6 md:col-start-7">

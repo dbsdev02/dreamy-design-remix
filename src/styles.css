@@ -194,7 +194,7 @@
 .animate-drop-in { animation: drop-in 700ms cubic-bezier(.22,1,.36,1) both; }
 .animate-menu-wipe { animation: menu-wipe 620ms cubic-bezier(.76,0,.24,1) both; }
 .animate-menu-item { animation: menu-item 620ms cubic-bezier(.22,1,.36,1) both; }
-.animate-page-in { animation: page-in 620ms cubic-bezier(.22,1,.36,1) both; }
+.animate-page-in { animation: page-in 620ms cubic-bezier(.22,1,.36,1) backwards; }
 .animate-bob { animation: bob 2.4s ease-in-out infinite; }
 .font-display { font-family: var(--font-display); }
 .grid-lines {

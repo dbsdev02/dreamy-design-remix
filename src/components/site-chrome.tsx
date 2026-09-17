@@ -289,8 +289,10 @@ const navItems = [
 
 export function SiteHeader({ inverse = false }: { inverse?: boolean }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const tone = inverse ? "text-primary-foreground" : "text-foreground";
-  const border = inverse ? "border-primary-foreground/55" : "border-border";
+  const [scrolled, setScrolled] = useState(false);
+  const solid = inverse ? scrolled : true;
+  const tone = solid ? "text-foreground" : "text-primary-foreground";
+  const border = solid ? "border-border" : "border-primary-foreground/55";
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -299,9 +301,19 @@ export function SiteHeader({ inverse = false }: { inverse?: boolean }) {
     };
   }, [menuOpen]);
 
+  useEffect(() => {
+    if (!inverse) return;
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [inverse]);
+
   return (
     <header
-      className={`animate-drop-in relative z-20 flex items-start justify-between px-7 py-6 md:px-10 md:py-7 ${tone}`}
+      className={`animate-drop-in ${inverse ? "fixed" : "sticky"} top-0 z-30 w-full flex items-start justify-between px-7 py-6 transition-colors duration-300 md:px-10 md:py-7 ${tone} ${
+        solid ? "bg-background/95 backdrop-blur-sm" : "bg-transparent"
+      }`}
     >
       <Button
         aria-label="Open menu"
@@ -321,12 +333,12 @@ export function SiteHeader({ inverse = false }: { inverse?: boolean }) {
         <img
           src="/logo-horizontal.png"
           alt="Essential Decor LLC — Interior Fitout, Design & Build"
-          className={`h-8 w-auto md:h-11 ${inverse ? "brightness-0 invert" : ""}`}
+          className={`h-8 w-auto md:h-11 ${solid ? "" : "brightness-0 invert"}`}
         />
       </Link>
 
       <nav
-        className="hidden items-center gap-7 text-[13px] font-semibold md:flex"
+        className="hidden items-center gap-7 text-[15px] font-semibold md:flex"
         aria-label="Primary navigation"
       >
         {navItems.map((item) => (
@@ -362,39 +374,73 @@ export function SiteHeader({ inverse = false }: { inverse?: boolean }) {
             </Button>
           </div>
 
-          <nav
-            className="mt-16 flex flex-col gap-6 font-display text-4xl italic md:mt-24 md:text-7xl"
-            aria-label="Mobile navigation"
-          >
-            {navItems.map((item, i) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                onClick={() => setMenuOpen(false)}
-                className="animate-menu-item group flex items-baseline gap-4 text-left transition-colors hover:text-accent"
-                style={{ animationDelay: `${180 + i * 70}ms` }}
-              >
-                <span className="font-sans text-sm not-italic tracking-[.2em] text-primary-foreground/40">
-                  {item.number}
-                </span>
-                <span className="transition-transform duration-500 group-hover:translate-x-3">
-                  {item.label}
-                </span>
-              </Link>
-            ))}
-          </nav>
+          <div className="mt-16 grid flex-1 grid-cols-1 gap-12 md:mt-24 md:grid-cols-12">
+            <nav
+              className="flex flex-col gap-6 font-display text-4xl italic md:col-span-7 md:text-7xl"
+              aria-label="Mobile navigation"
+            >
+              {navItems.map((item, i) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  onClick={() => setMenuOpen(false)}
+                  className="animate-menu-item group flex items-baseline gap-4 text-left transition-colors hover:text-accent"
+                  style={{ animationDelay: `${180 + i * 70}ms` }}
+                >
+                  <span className="font-sans text-sm not-italic tracking-[.2em] text-primary-foreground/40">
+                    {item.number}
+                  </span>
+                  <span className="transition-transform duration-500 group-hover:translate-x-3">
+                    {item.label}
+                  </span>
+                </Link>
+              ))}
+            </nav>
 
-          <div
-            className="animate-menu-item mt-auto flex flex-wrap gap-x-10 gap-y-2 border-t border-primary-foreground/15 pt-7 text-xs uppercase tracking-[.16em] text-primary-foreground/60"
-            style={{ animationDelay: "620ms" }}
-          >
-            <span>Al Jaddaf Avenue Building, Office 707, Dubai</span>
-            <a href="tel:+971589102341" className="link-underline">
-              +971 58 910 2341
-            </a>
-            <a href="mailto:info@essentialsfnd.com" className="link-underline">
-              info@essentialsfnd.com
-            </a>
+            <div
+              className="animate-menu-item md:col-span-4 md:col-start-9 md:pt-4"
+              style={{ animationDelay: "480ms" }}
+            >
+              <p className="text-xs font-semibold uppercase tracking-[.18em] text-primary-foreground/50">
+                Contact <span className="text-accent underline decoration-2 underline-offset-4">Info</span>
+              </p>
+              <div className="mt-5 space-y-2 text-sm">
+                <p className="text-primary-foreground/70">Al Jaddaf Avenue Building, Office 707, Dubai</p>
+                <a href="tel:+971589102341" className="link-underline block">
+                  UAE | +971 58 910 2341
+                </a>
+                <a href="mailto:info@essentialsfnd.com" className="link-underline block">
+                  info@essentialsfnd.com
+                </a>
+              </div>
+
+              <p className="mt-10 text-xs font-semibold uppercase tracking-[.18em] text-primary-foreground/50">
+                Social <span className="text-accent underline decoration-2 underline-offset-4">Media</span>
+              </p>
+              <div className="mt-5 flex items-center gap-3">
+                {socialLinks.map(({ label, href, icon: Icon }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-primary-foreground/30 transition-colors hover:border-primary-foreground hover:text-accent"
+                  >
+                    <Icon size={16} strokeWidth={1.5} />
+                  </a>
+                ))}
+                <a
+                  href="https://wa.me/971589102341"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Chat with us on WhatsApp"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-primary-foreground/30 text-[#25D366] transition-colors hover:border-primary-foreground"
+                >
+                  <WhatsAppIcon size={16} />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       )}
@@ -528,5 +574,5 @@ export function PageIntro({
 }
 
 export function PageShell({ children }: { children: ReactNode }) {
-  return <main className="animate-page-in overflow-hidden bg-background">{children}</main>;
+  return <main className="animate-page-in bg-background">{children}</main>;
 }

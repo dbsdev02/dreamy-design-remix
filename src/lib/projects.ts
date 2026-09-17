@@ -11,6 +11,11 @@ export type ProjectMeta = {
   blurb: string;
   order?: string[];
   cover?: number;
+  sector?: string;
+  clientType?: string;
+  concept?: string;
+  area?: string;
+  description?: string[];
 };
 
 export type Project = {
@@ -24,6 +29,11 @@ export type Project = {
   blurb: string;
   cover: string;
   images: string[];
+  sector?: string;
+  clientType?: string;
+  concept?: string;
+  area?: string;
+  description?: string[];
 };
 
 const manifest = imagesData as Record<string, string[]>;
@@ -66,6 +76,11 @@ export const projects: Project[] = Object.entries(META)
       blurb: m.blurb,
       cover,
       images,
+      ...(m.sector !== undefined && { sector: m.sector }),
+      ...(m.clientType !== undefined && { clientType: m.clientType }),
+      ...(m.concept !== undefined && { concept: m.concept }),
+      ...(m.area !== undefined && { area: m.area }),
+      ...(m.description !== undefined && { description: m.description }),
     };
   });
 

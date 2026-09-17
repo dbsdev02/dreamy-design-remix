@@ -117,6 +117,65 @@ function ProjectDetail() {
         </div>
       </section>
 
+      {(project.description?.length || project.sector || project.concept) && (
+        <section className="grid grid-cols-1 gap-12 px-8 py-14 md:grid-cols-12 md:px-16 md:py-20">
+          <Reveal className="md:col-span-4 md:col-start-2">
+            <p className="text-xs font-semibold uppercase tracking-[.18em] text-accent">
+              Project details
+            </p>
+            <dl className="mt-8 space-y-6">
+              {project.clientType && (
+                <div className="border-t border-border pt-4">
+                  <dt className="text-xs uppercase tracking-[.16em] text-muted-foreground">
+                    Client / Business type
+                  </dt>
+                  <dd className="mt-2 text-base leading-snug">{project.clientType}</dd>
+                </div>
+              )}
+              {project.sector && (
+                <div className="border-t border-border pt-4">
+                  <dt className="text-xs uppercase tracking-[.16em] text-muted-foreground">
+                    Sector
+                  </dt>
+                  <dd className="mt-2 text-base leading-snug">{project.sector}</dd>
+                </div>
+              )}
+              <div className="border-t border-border pt-4">
+                <dt className="text-xs uppercase tracking-[.16em] text-muted-foreground">
+                  Location
+                </dt>
+                <dd className="mt-2 text-base leading-snug">{project.location}</dd>
+              </div>
+              {project.concept && (
+                <div className="border-t border-border pt-4">
+                  <dt className="text-xs uppercase tracking-[.16em] text-muted-foreground">
+                    Design concept
+                  </dt>
+                  <dd className="mt-2 text-base leading-snug">{project.concept}</dd>
+                </div>
+              )}
+              {project.area && (
+                <div className="border-t border-border pt-4">
+                  <dt className="text-xs uppercase tracking-[.16em] text-muted-foreground">
+                    Total area
+                  </dt>
+                  <dd className="mt-2 text-base leading-snug">{project.area}</dd>
+                </div>
+              )}
+            </dl>
+          </Reveal>
+          {!!project.description?.length && (
+            <Reveal delay={140} className="space-y-5 md:col-span-6 md:col-start-7">
+              {project.description.map((paragraph, i) => (
+                <p key={i} className="text-sm leading-relaxed text-muted-foreground">
+                  {paragraph}
+                </p>
+              ))}
+            </Reveal>
+          )}
+        </section>
+      )}
+
       <section className="px-8 py-12 md:px-16 md:py-16">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           {project.images.map((src, i) => {

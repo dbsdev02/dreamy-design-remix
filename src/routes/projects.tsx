@@ -69,9 +69,6 @@ function ProjectsPage() {
                       loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
                     />
-                    <span className="absolute right-3 top-3 bg-background/90 px-2 py-1 text-[10px] font-semibold uppercase tracking-[.12em]">
-                      {project.year}
-                    </span>
                   </div>
                   <div className="mt-5 flex items-start justify-between gap-3">
                     <div>

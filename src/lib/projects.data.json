@@ -17,14 +17,28 @@
       "blurb": "Education and public-facing environments delivered to a standard."
     }
   },
-  "categoryOrder": ["commercial", "retail", "healthcare", "institutional"],
+  "categoryOrder": [
+    "commercial",
+    "retail",
+    "healthcare",
+    "institutional"
+  ],
   "meta": {
     "Averyx Group, TECOM": {
       "category": "commercial",
       "name": "Averyx Group Office",
-      "location": "TECOM, Dubai",
+      "location": "TECOM / Barsha Heights, Dubai",
       "year": "2026",
-      "blurb": "A modern office fit-out combining smart space planning, glass partitions, custom joinery and refined finishes to create a functional, professional workspace."
+      "blurb": "A modern office fit-out combining smart space planning, glass partitions, custom joinery and refined finishes to create a functional, professional workspace.",
+      "sector": "Interior Fit-out",
+      "clientType": "Accounting firm",
+      "concept": "Modern Serenity — a calm, neutral and contemporary workspace designed to promote efficiency, adaptability and enduring elegance.",
+      "area": "104.52 sq.m",
+      "description": [
+        "The interior renovation and fit-out project for Averyx Group, an accounting firm located in Office No. 2010 at Tecom / Barsha Heights, Dubai, is envisioned to create a functional, efficient and contemporary workplace that supports productivity and operational needs. Guided by the “Modern Serenity” concept, the design embraces a calm and neutral atmosphere where minimal, non-permanent elements establish a flexible environment capable of evolving with the business. Subtle blue accents are thoughtfully integrated to introduce a refined layer of brand identity.",
+        "The spatial layout is carefully planned to ensure clear zoning and smooth circulation while maintaining necessary privacy. It features a welcoming reception area, a dedicated conference room, closed office cabins and a dry pantry. The overall spatial arrangement prioritizes a professional flow between collaborative zones and private workspaces, ensuring that all functional requirements of the accounting firm are seamlessly accommodated.",
+        "The material and colour palette is curated to foster a professional, welcoming and enduring office environment. White serves as a neutral foundation to enhance natural light and openness, grey offers a cool tone that supports focus, warm brown brings depth through natural wood finishes and textured surfaces, and black is applied to define edges and add modern contrast."
+      ]
     },
     "Neo": {
       "category": "commercial",
@@ -38,7 +52,16 @@
       "name": "One Stop Shop Office",
       "location": "Dubai Health, Dubai",
       "year": "2025–26",
-      "blurb": "A vibrant office fit-out combining bold brand colours, custom joinery and collaborative spaces to create a dynamic, functional workplace."
+      "blurb": "A vibrant office fit-out combining bold brand colours, custom joinery and collaborative spaces to create a dynamic, functional workplace.",
+      "sector": "Interior Fit-out",
+      "clientType": "Student Service Hub",
+      "concept": "A modern corporate aesthetic featuring vibrant terracotta and deep blue accents grounded by concrete textures, light wood and clean lighting.",
+      "area": "160 sq.m",
+      "description": [
+        "The One Stop Shop project has been successfully executed as a centralized student service hub, seamlessly bringing essential administrative and career-related services together within a single, efficient space. The completed site effectively realizes the original vision by combining clear functional zoning with a professional yet welcoming atmosphere that prioritizes clarity, accessibility and an optimal user experience.",
+        "The spatial layout and interior architecture have been fully executed to incorporate a prominent reception, a comfortable waiting area featuring blue sofas and orange ottomans, functional teller counters, and supporting back-office functions that streamline service delivery and student movement. Design elements such as the textured grey stone reception desk, warm wooden flooring and the striking backlit orange architectural ceiling feature create an engaging and cohesive environment.",
+        "Complementing the functional layout, the aesthetic vision is anchored by a vibrant yet professional palette and custom branding elements. The feature wall prominently displays the “CRAFT YOUR FUTURE” signage alongside integrated green panels and vertical detailing, completing a modern environment that successfully inspires students to connect and collaborate."
+      ]
     },
     "Time Lapse (project name )": {
       "category": "commercial",
@@ -46,161 +69,319 @@
       "location": "JLT, Dubai",
       "year": "2025–26",
       "blurb": "A dynamic office fit-out blending biophilic elements, collaborative workspaces and recreational features to create an energetic workplace.",
-      "cover": 37
+      "cover": 37,
+      "sector": "Interior Fit-out",
+      "clientType": "Office",
+      "area": "160 sq.m",
+      "description": [
+        "The Timelapse Office is conceived as a dynamic and contemporary workplace that brings together productivity, collaboration and employee well-being. The design focuses on creating an energetic environment through the integration of biophilic elements, flexible workspaces and recreational areas. A balance of natural textures, greenery, modern finishes and open planning creates a workplace that feels vibrant, welcoming and adaptable.",
+        "The office fit-out combines functional planning with a strong emphasis on user experience. Collaborative work zones are complemented by informal breakout spaces and recreational features, encouraging communication and social interaction among employees. Biophilic elements and carefully selected materials introduce warmth and visual interest, while contemporary detailing and efficient spatial planning give the office a professional yet energetic identity. Overall, the design creates a flexible, people-focused workplace that supports productivity, creativity and a positive working atmosphere."
+      ]
     },
     "Kingston Stanly": {
       "category": "commercial",
       "name": "Kingston Stanley Office",
       "location": "Dubai",
       "year": "2018",
-      "blurb": "A vibrant office fit-out featuring branded accents, integrated lighting and efficient workspaces for a modern, energetic environment."
+      "blurb": "A vibrant office fit-out featuring branded accents, integrated lighting and efficient workspaces for a modern, energetic environment.",
+      "sector": "Commercial – Office Fit-out",
+      "concept": "Vibrant, Energetic & Brand-Driven Workplace",
+      "description": [
+        "The Kingston Stanley Office was conceived as a vibrant and contemporary workplace that reflects the energetic character of the brand while creating a professional and engaging environment for employees and visitors. The design concept focuses on translating the company’s identity into the interior through bold branded accents, contemporary finishes and a carefully coordinated colour and material palette.",
+        "The spatial planning prioritises efficiency, functionality and collaboration, creating well-organised workspaces that support the day-to-day requirements of a modern recruitment and professional services office. Integrated lighting is used as an important design element, enhancing the atmosphere while highlighting key architectural and branded features throughout the space. The layout balances focused work areas with shared spaces to encourage communication and interaction.",
+        "Overall, the office combines corporate functionality with a youthful and energetic design language. Branded elements, integrated lighting and efficient space planning create a cohesive workplace identity while maintaining a comfortable and professional atmosphere. The result is a contemporary office environment that supports productivity, collaboration and a strong sense of corporate identity."
+      ]
     },
     "BLS": {
       "category": "commercial",
       "name": "BLS International Office",
       "location": "Dubai",
       "year": "2018",
-      "blurb": "A modern office fit-out combining bold branding, curved workstations and efficient space planning — a welcoming, professional environment that supports productivity and daily operations."
+      "blurb": "A modern office fit-out combining bold branding, curved workstations and efficient space planning — a welcoming, professional environment that supports productivity and daily operations.",
+      "sector": "Commercial – Office Fit-out",
+      "concept": "Contemporary, Brand-Driven & Functional Workplace",
+      "description": [
+        "The BLS International Office was designed as a modern and professional workplace that reflects the organisation’s corporate identity while creating a welcoming environment for employees and visitors. The concept focuses on integrating bold branding elements with a clean contemporary design language, creating a strong visual identity throughout the office while maintaining a comfortable and approachable atmosphere.",
+        "Overall, the project combines corporate branding with practical workplace design to create a cohesive and contemporary office environment. Bold visual elements, curved furniture forms and efficient space planning work together to establish a professional identity without compromising comfort or functionality. The result is a well-balanced workplace that supports productivity while providing a positive experience for both staff and visitors."
+      ]
     },
     "DC Technologies-Internet City": {
       "category": "commercial",
       "name": "DC Technologies",
       "location": "Dubai Internet City",
       "year": "2025",
-      "blurb": "A clean, efficient technology-company workspace with practical planning and understated finishes."
+      "blurb": "A clean, efficient technology-company workspace with practical planning and understated finishes.",
+      "sector": "Commercial – Office Fit-out",
+      "concept": "Clean, Efficient & Contemporary Technology Workspace",
+      "description": [
+        "The DC Technologies office was designed as a clean and contemporary workplace that reflects the innovative and technology-focused nature of the company. The concept is centred on simplicity, efficiency and functionality, creating an environment that feels professional while maintaining a comfortable and visually balanced atmosphere. A restrained material palette and understated finishes establish a modern corporate identity without unnecessary visual complexity.",
+        "The spatial planning focuses on practical organisation and efficient use of the available area. Workspaces are arranged to support focused individual activities as well as smooth communication and collaboration between teams. Clear circulation, functional furniture arrangements and carefully considered zoning contribute to a workplace that is easy to navigate and adaptable to the operational requirements of a technology company.",
+        "Overall, the design combines practical planning with a refined contemporary aesthetic. Neutral finishes, clean architectural lines and subtle detailing create a sophisticated yet understated environment, allowing the functionality of the workplace to remain the primary focus. The result is an efficient and professional office that supports productivity, collaboration and the evolving needs of a modern technology-driven organisation."
+      ]
     },
     "DHCX office": {
       "category": "commercial",
       "name": "DHCX Office",
       "location": "Dubai",
       "year": "2026",
-      "blurb": "A crisp corporate fit-out balancing open collaboration areas with focused meeting and work zones."
+      "blurb": "A crisp corporate fit-out balancing open collaboration areas with focused meeting and work zones.",
+      "sector": "Commercial – Office Fit-out",
+      "concept": "Crisp, Contemporary & Collaborative Workplace",
+      "description": [
+        "The DHCX Office is conceived as a crisp and contemporary corporate workplace that balances professionalism with a collaborative and people-focused environment. The design adopts a clean architectural language, creating a refined backdrop that supports the identity and operational requirements of a modern corporate office. The overall concept emphasises clarity, functionality and a sense of openness.",
+        "The spatial planning is organised around a combination of open collaboration areas and dedicated meeting and work zones. This creates a flexible workplace where employees can move seamlessly between individual focused tasks, team discussions and formal meetings. Clear circulation and purposeful zoning ensure that the office remains efficient while encouraging communication and interaction among users.",
+        "Overall, the design combines contemporary aesthetics with practical workplace planning to create a balanced and efficient corporate environment. Clean forms, organised spaces and carefully defined work zones contribute to a professional yet welcoming atmosphere. The result is a modern office that supports productivity, collaboration and focused work while maintaining a cohesive and sophisticated design identity."
+      ]
     },
     "Lawyer Office - Ubora Tower": {
       "category": "commercial",
       "name": "Law Firm Office",
       "location": "Ubora Tower, Business Bay",
       "year": "2025",
-      "blurb": "A considered professional-services interior — quiet, precise and built around client confidentiality."
+      "blurb": "A considered professional-services interior — quiet, precise and built around client confidentiality.",
+      "sector": "Commercial – Legal / Professional Services",
+      "concept": "Sophisticated, Precise & Confidential Professional Workplace",
+      "description": [
+        "The Law Firm Office is conceived as a refined professional environment that reflects the values of trust, discretion and precision associated with the legal sector. The design adopts a calm and sophisticated architectural language, creating an atmosphere that feels professional and reassuring for both clients and staff. The overall concept prioritises privacy and confidentiality while maintaining a contemporary and welcoming character.",
+        "The spatial planning is carefully organised to support the different requirements of a legal practice, with a clear distinction between client-facing areas, private offices and collaborative workspaces. Circulation and zoning are designed to provide a sense of privacy and controlled movement throughout the office. Meeting and consultation areas are positioned to create comfortable settings for confidential discussions while maintaining an efficient connection with the wider workplace.",
+        "Material selection, detailing and lighting contribute to a restrained and elegant interior identity. Clean architectural lines and a carefully balanced palette create a timeless professional atmosphere without excessive visual elements. Overall, the project delivers a sophisticated legal workplace that combines functionality, privacy and client comfort, creating an environment built around professionalism, trust and confidentiality."
+      ]
     },
     "Security & Commodities": {
       "category": "commercial",
       "name": "Securities & Commodities Authority",
       "location": "Dubai",
       "year": "2025",
-      "blurb": "An institutional office fit-out delivered to a regulatory-body standard, with durable materials and a formal palette."
+      "blurb": "An institutional office fit-out delivered to a regulatory-body standard, with durable materials and a formal palette.",
+      "sector": "Commercial – Institutional / Government Office",
+      "concept": "Formal, Durable & Contemporary Institutional Workplace",
+      "description": [
+        "The Securities & Commodities Authority office is conceived as a formal and sophisticated institutional workplace that reflects the authority, professionalism and structured nature of a regulatory organisation. The design adopts a restrained architectural language with a formal material and colour palette, creating an environment that communicates stability, trust and professionalism while maintaining a contemporary workplace character.",
+        "The planning approach focuses on functionality, efficient circulation and clearly defined work zones to support the operational requirements of an institutional office. Spaces are organised to provide a balance between individual work areas, meeting facilities and shared functions, ensuring privacy where required while maintaining an efficient connection between different departments and users.",
+        "Material selection plays an important role in establishing the identity of the project. Durable finishes and carefully considered detailing are incorporated to withstand the demands of a high-use institutional environment while maintaining a refined appearance. Overall, the project creates a professional and enduring workplace that combines functionality, durability and a formal corporate identity appropriate to a regulatory authority."
+      ]
     },
     "Technopark, DIC": {
       "category": "commercial",
       "name": "Technopark Office",
       "location": "Dubai Internet City",
       "year": "2025",
-      "blurb": "A functional workspace fit-out with efficient planning and clean, hard-wearing finishes."
+      "blurb": "A functional workspace fit-out with efficient planning and clean, hard-wearing finishes.",
+      "sector": "Commercial – Office Fit-out",
+      "concept": "Functional, Contemporary & Efficient Technology Workplace",
+      "description": [
+        "The Technopark Office is designed as a functional and efficient corporate workplace, with a clean contemporary aesthetic that prioritises usability and durability. The planning makes effective use of natural daylight from the perimeter glazing while maintaining visual connectivity through extensive glass partitions. The overall design is simple and professional, with strong contrasts between white surfaces, dark feature elements and red accent furniture.",
+        "The furniture selection combines executive workstations, task chairs, visitor chairs and collaborative meeting tables. Executive seating is predominantly upholstered in black, with chrome-finished or metallic frames. The meeting areas feature large rectangular tables with clean, minimalist profiles, while the reception/lounge areas incorporate red upholstered lounge chairs and sofas that introduce a strong corporate accent. White storage cabinets and workstations provide additional functional storage while maintaining the light visual character of the office.",
+        "Overall, the Technopark Office presents a practical and contemporary workplace solution where efficient planning, durable materials and functional furniture work together. The combination of transparent partitions, natural daylight, neutral finishes and distinctive red accents creates an environment that is professional, bright and adaptable to everyday office operations."
+      ]
     },
     "Prayer Room": {
       "category": "commercial",
       "name": "Prayer Room — DHC",
       "location": "Dubai Healthcare City",
       "year": "2025–26",
-      "blurb": "A serene prayer room fit-out featuring soft lighting, refined detailing and thoughtfully designed ablution facilities for a calm, welcoming environment."
+      "blurb": "A serene prayer room fit-out featuring soft lighting, refined detailing and thoughtfully designed ablution facilities for a calm, welcoming environment.",
+      "sector": "Commercial / Healthcare – Prayer & Wellness Facility",
+      "concept": "Serene, Minimal & Contemporary Islamic Interior",
+      "description": [
+        "The Prayer Room at Dubai Healthcare City is conceived as a serene and welcoming space for prayer, reflection and spiritual well-being. The design adopts a minimal contemporary approach, using soft neutral tones, controlled lighting and carefully framed architectural elements to create a calm atmosphere. The project is specifically described as a prayer-room fit-out with refined detailing and thoughtfully designed ablution facilities.",
+        "The material palette is intentionally calm and understated, creating a peaceful environment suitable for prayer and reflection. The ablution area uses large-format stone-look porcelain tiles across the walls and floor, complemented by a solid-surface or stone-look vanity counter. Dark-coloured sanitary accessories, taps and fittings provide a subtle contrast against the neutral finishes.",
+        "The prayer hall features soft white painted walls, a dark blue/charcoal carpet flooring with integrated patterned prayer-row detailing, and a dark skirting finish. Decorative metal screens with geometric Islamic patterns are incorporated along the glazed openings, filtering daylight while adding a distinctive architectural element.",
+        "The detailing is completed with a recessed ceiling and concealed LED cove lighting, supplemented by recessed downlights. A sculptural arched mihrab feature provides a focal point, using a contrasting metallic/stone-toned finish and integrated lighting to create a soft, dignified visual accent."
+      ]
     },
     "Restroom Renovation - Commercial Tower 1": {
       "category": "commercial",
       "name": "Restroom Renovation — Tower 1",
       "location": "Dubai",
       "year": "2026",
-      "blurb": "A refined washroom renovation combining contemporary finishes, integrated lighting and functional detailing for a clean, elevated experience."
+      "blurb": "A refined washroom renovation combining contemporary finishes, integrated lighting and functional detailing for a clean, elevated experience.",
+      "sector": "Commercial – Restroom Renovation / Interior Fit-out",
+      "concept": "Contemporary, Minimal & Refined Washroom",
+      "description": [
+        "The Restroom Renovation — Tower 1 is conceived as a refined contemporary washroom environment, transforming a functional commercial facility into a more elevated and comfortable user experience. The design uses a restrained neutral palette, natural-looking textures and carefully integrated lighting to create a calm and sophisticated atmosphere, combining contemporary finishes, integrated lighting and functional detailing.",
+        "The material palette uses a warm neutral and stone-inspired aesthetic to create a sophisticated and durable restroom environment. Large-format light beige/cream porcelain tiles are used for the flooring, while the walls feature a textured terrazzo/stone-look tile with natural speckling. The combination creates visual depth while maintaining a clean, cohesive appearance. The vanity counters and basin units are finished in a matte taupe/stone-effect material, paired with integrated white ceramic countertop basins. Mirrors feature rounded-corner profiles with concealed LED backlighting, while the sanitary fittings and accessories use a contrasting matte black finish, and dark toilet cubicle partitions and doors reinforce the contemporary character of the space."
+      ]
     },
     "Restroom Renovation - Commercial Tower 2": {
       "category": "commercial",
       "name": "Restroom Renovation — Tower 2",
       "location": "Dubai",
       "year": "2026",
-      "blurb": "A contemporary restroom refurbishment with durable stone-look surfaces, concealed services and a calm, consistent material story."
+      "blurb": "A contemporary restroom refurbishment with durable stone-look surfaces, concealed services and a calm, consistent material story.",
+      "sector": "Commercial – Restroom Renovation / Interior Fit-out",
+      "concept": "Contemporary, Warm & Refined Restroom Interior",
+      "description": [
+        "The Restroom Renovation — Tower 2 is conceived as a contemporary commercial restroom that combines functionality, durability and a warm hospitality-inspired character. A consistent palette of beige stone-look wall finishes, light flooring and natural wood tones creates a calm and sophisticated environment, while the restrained detailing keeps the overall interior clean and timeless.",
+        "The vanity areas are designed as a strong functional feature, incorporating long integrated white marble-look counters with multiple wash basins and generous mirror surfaces. Vertical illuminated mirrors and concealed LED lighting provide both practical task lighting and a refined visual effect, while the timber-finish cabinetry below introduces warmth and balances the cooler stone surfaces. Throughout the restroom, concealed services, integrated storage, durable finishes and carefully coordinated sanitary fittings support efficient everyday use and easy maintenance. The wood-finish WC cubicles and doors establish a cohesive material language, while warm cove lighting and recessed downlights enhance the sense of comfort and refinement, resulting in a professional yet welcoming commercial restroom environment."
+      ]
     },
     "Balance Studio - Yoga & Pilates, Jumeirah": {
       "category": "retail",
       "name": "Balance Studio — Yoga & Pilates",
       "location": "Jumeirah, Dubai",
       "year": "2026",
-      "blurb": "A calming wellness studio combining organic forms, warm finishes and thoughtful lighting to create an inviting space for yoga and Pilates."
+      "blurb": "A calming wellness studio combining organic forms, warm finishes and thoughtful lighting to create an inviting space for yoga and Pilates.",
+      "sector": "Retail Fit-out – Wellness / Fitness Studio",
+      "concept": "Calm, Organic & Contemporary Wellness Interior",
+      "description": [
+        "Balance Studio — Yoga & Pilates is designed as a calm and contemporary wellness environment where architecture, materiality and lighting work together to support relaxation, movement and mindfulness. The interior uses a warm neutral palette of textured beige surfaces, light timber flooring and natural wood finishes, creating a welcoming atmosphere that feels both sophisticated and grounded.",
+        "The studio spaces are defined by a distinctive language of soft arches, organic curves and illuminated architectural details. Full-height mirrors enhance the sense of spaciousness and support the functional requirements of yoga and Pilates, while integrated LED lighting around the arched openings creates a subtle visual rhythm. Timber shelving, lockers and cabinetry provide practical storage while reinforcing the natural character of the interior.",
+        "The Pilates and yoga areas are carefully organised to provide clear circulation and generous space around each activity zone. Warm timber flooring, neutral upholstery, indoor planting and carefully selected accent colours create a balanced sensory environment, while sculptural suspended lighting becomes a key design feature. The overall result is a refined, calming and contemporary wellness studio that combines operational functionality with a strong visual identity."
+      ]
     },
     "Watch 971": {
       "category": "retail",
       "name": "971 Watch Co",
       "location": "Dubai",
       "year": "2025–26",
-      "blurb": "A luxury watch boutique combining bold branding, sculptural displays and refined finishes to create an exclusive retail experience."
+      "blurb": "A luxury watch boutique combining bold branding, sculptural displays and refined finishes to create an exclusive retail experience.",
+      "sector": "Retail – Luxury Watch Boutique Fit-out",
+      "concept": "Bold, Luxurious & Experiential Retail Interior",
+      "description": [
+        "971 Watch Co is conceived as an exclusive luxury retail environment where strong brand identity is combined with sophisticated materiality and an immersive customer experience. The interior establishes a distinctive palette of deep forest green, warm ivory, marble-look surfaces and metallic gold accents, creating a rich and contemporary atmosphere appropriate for a premium watch boutique.",
+        "The retail display system forms the core of the interior concept, with custom organic-shaped niches and sculptural wall elements providing individual presentation zones for the watches. Carefully integrated lighting highlights the displayed products, while the symmetrical arrangement of the display walls creates a strong sense of order and visual focus. The central lounge area introduces curved upholstered seating and a feature coffee table, providing a comfortable setting for personalised customer consultations.",
+        "A dramatic feature wall and illuminated brand signage establish a strong visual focal point, reinforcing the identity of 971 Watch Co throughout the space. The combination of polished stone-look flooring, sculptural displays, decorative lighting and refined metallic detailing creates a luxurious, memorable and highly branded retail experience, balancing product visibility with an inviting environment for customers."
+      ]
     },
     "Laundry Hub": {
       "category": "retail",
       "name": "The Laundry Hub",
       "location": "Dubai",
       "year": "2025–26",
-      "blurb": "A vibrant laundry store combining bold branding, efficient service counters and practical garment-display solutions for a seamless customer experience."
+      "blurb": "A vibrant laundry store combining bold branding, efficient service counters and practical garment-display solutions for a seamless customer experience.",
+      "sector": "Retail – Laundry / Service Retail Fit-out",
+      "concept": "Vibrant, Functional & Brand-Driven Retail Interior",
+      "description": [
+        "The Laundry Hub is conceived as a contemporary service-retail environment where strong visual branding and operational functionality work together to create an engaging customer experience. The interior establishes a distinctive palette of vibrant orange, fresh green/turquoise, white and concrete-grey tones, giving the store an energetic identity while maintaining a clean and organised appearance.",
+        "The planning focuses on efficient customer service and garment handling, with a prominent reception counter positioned at the entrance and clearly organised hanging and folded-garment display zones behind it. Custom green shelving, tubular garment racks and integrated storage provide practical solutions for sorting and presenting garments, while the open arrangement allows customers and staff to move easily through the space.",
+        "Material contrast and branded detailing create the project’s strongest visual character. The textured orange reception desk, ribbed green joinery, white brick-effect walls, illuminated signage and green metal framework establish a cohesive industrial-retail aesthetic, while recessed and pendant lighting provide functional illumination throughout the store. The result is a bold, approachable and highly functional laundry retail interior that strengthens brand recognition while supporting efficient day-to-day operations."
+      ]
     },
     "Prep Me Learning Center - JGE Mall": {
       "category": "retail",
       "name": "PrepMe Learning Centre",
       "location": "JGE Mall, Dubai",
       "year": "2025–26",
-      "blurb": "A vibrant learning centre combining bold branding, creative classrooms and dedicated music spaces to inspire learning and self-expression."
+      "blurb": "A vibrant learning centre combining bold branding, creative classrooms and dedicated music spaces to inspire learning and self-expression.",
+      "sector": "Retail Fit-out – Education / Learning Centre",
+      "concept": "Vibrant, Creative & Interactive Learning Environment",
+      "description": [
+        "PrepMe Learning Centre is conceived as an energetic and engaging educational environment where interior design is used to encourage creativity, interaction and self-expression. The design combines a clean architectural base with a vibrant palette of orange, navy blue, warm timber and white, creating a youthful identity that aligns strongly with the PrepMe brand.",
+        "The planning incorporates a variety of learning environments, including flexible classrooms, collaborative study areas and dedicated music spaces. Classroom layouts use movable tables and lightweight contemporary seating to support different teaching configurations, while glazed partitions allow visual connection between spaces. Timber-look flooring and warm wood finishes introduce a comfortable, approachable character, while colourful murals add personality to the learning areas.",
+        "Music and creative-learning areas receive a more specialised treatment, with acoustic wall panels, graphic murals and dedicated musical equipment creating an immersive environment for performance and practice. The reception area establishes a strong first impression through its sculptural orange-and-blue counter, timber slatted feature wall and illuminated branding. Overall, the project creates a dynamic, colourful and functional learning centre that balances educational requirements with a strong visual identity and an inspiring atmosphere."
+      ]
     },
     "Toddlers International Nursery - Majan": {
       "category": "retail",
       "name": "Toddlers International Nursery — Majan",
       "location": "Majan, Dubai",
       "year": "2025–26",
-      "blurb": "A playful nursery fit-out combining themed classrooms, child-friendly details and a welcoming reception to create a safe, engaging learning environment."
+      "blurb": "A playful nursery fit-out combining themed classrooms, child-friendly details and a welcoming reception to create a safe, engaging learning environment.",
+      "sector": "Retail Fit-out – Early Childhood Education / Nursery",
+      "concept": "Playful, Colourful & Child-Centred Learning Environment",
+      "description": [
+        "Toddlers International Nursery — Majan is conceived as a vibrant, welcoming and child-centred learning environment where interior design supports both early education and imaginative play. A soft palette of pastel pink, yellow, mint green, blue and cream creates a cheerful atmosphere, while warm timber-look flooring and natural wood elements introduce comfort and visual warmth. The overall design establishes a friendly environment that feels stimulating without becoming visually overwhelming.",
+        "The nursery is organised around a series of themed classrooms and activity zones, with each area incorporating child-scaled furniture, accessible storage and dedicated play elements. Rounded wall graphics, colourful activity mats and playful decorative features help establish clear zones for different activities, while glazed door panels and open planning maintain visual connection between children and staff. Large windows also bring generous natural light into the learning areas, enhancing the sense of openness and connection with the outdoors.",
+        "A strong emphasis is placed on creating an interactive and imaginative environment through themed murals, nature-inspired graphics, animal illustrations and playful architectural details. The reception area introduces a curved custom desk, timber picket-style elements and the nursery’s branded feature wall, creating a welcoming first impression for children and parents. Together, the durable finishes, child-friendly furniture, controlled lighting and carefully planned activity areas create a safe, colourful and engaging nursery interior designed to encourage learning, exploration and creativity."
+      ]
     },
     "Toddlers International Nursery - Meydan": {
       "category": "retail",
       "name": "Toddlers International Nursery — Meydan",
       "location": "Meydan, Dubai",
       "year": "2026",
-      "blurb": "A cheerful nursery fit-out combining soft pastel tones, interactive features and child-friendly details to create a welcoming learning environment."
+      "blurb": "A cheerful nursery fit-out combining soft pastel tones, interactive features and child-friendly details to create a welcoming learning environment.",
+      "sector": "Retail Fit-out – Early Childhood Education / Nursery",
+      "concept": "Playful, Pastel & Interactive Child-Centred Learning Environment",
+      "description": [
+        "Toddlers International Nursery — Meydan is designed as a cheerful and welcoming early-learning environment that places children’s comfort, curiosity and interaction at the centre of the interior experience. The design combines a soft pastel palette with warm timber tones, playful graphics and rounded forms to create an atmosphere that feels safe, approachable and stimulating. The overall concept establishes a gentle visual identity while avoiding an overly busy environment, allowing the nursery to feel both playful and refined.",
+        "The reception and circulation areas introduce strong elements of child-oriented design through curved forms, colourful doors, illustrated wall graphics and interactive installations. Custom shelving incorporates arched niches with integrated lighting, while sensory-play features provide opportunities for children to engage with the environment. Low-level timber barriers and child-friendly detailing help define activity areas while maintaining a sense of openness and visibility throughout the nursery.",
+        "Material selection balances aesthetics, durability and everyday functionality required for a nursery environment. Warm wood-look flooring provides a comfortable visual foundation, while painted surfaces, colourful joinery and illuminated features introduce variety without compromising the calm character of the space. Together with soft lighting, nature-inspired graphics and carefully scaled furniture, the design creates an engaging environment that supports learning, sensory development and imaginative play while establishing a distinctive contemporary nursery identity."
+      ]
     },
     "Candy Floss": {
       "category": "retail",
       "name": "Candy Floss Play Centre",
       "location": "Dubai",
       "year": "2025–26",
-      "blurb": "A vibrant indoor play centre combining colourful activity zones, soft-play features and family-friendly spaces for an engaging experience."
+      "blurb": "A vibrant indoor play centre combining colourful activity zones, soft-play features and family-friendly spaces for an engaging experience.",
+      "sector": "Retail Fit-out – Indoor Play Centre / Family Entertainment",
+      "concept": "Colourful, Playful & Interactive Children’s Entertainment Environment",
+      "description": [
+        "Candy Floss Play Centre is conceived as a vibrant and immersive children's entertainment environment where colour, movement and imaginative play shape the overall interior experience. The design uses a playful combination of pastel pink, blue, green and white with brighter orange and yellow accents, creating a visually stimulating yet welcoming atmosphere for children and families. Rounded architectural forms and repeated arched openings establish a distinctive design language throughout the space.",
+        "The planning incorporates a variety of activity zones to accommodate different types of play, including soft-play structures, climbing activities, role-play areas, children's learning spaces and flexible seating zones. A climbing wall, enclosed netted play structure and padded seating provide active recreational opportunities, while smaller tables, storage units and role-play installations create spaces for quieter and imaginative activities. The arrangement allows the centre to support different age groups while maintaining clear visual connections between activity areas.",
+        "Material selection combines practical, child-friendly finishes with a strong thematic identity. Resilient flooring, padded play elements, rounded furniture and durable painted surfaces are complemented by custom joinery, colourful wall treatments and decorative lighting. Candy-inspired pendant fixtures and graphic features reinforce the playful character, while the warm wood-look flooring introduces balance and visual warmth. Overall, the interior creates an energetic, family-oriented destination that combines functionality, safety-conscious detailing and imaginative design."
+      ]
     },
     "Antakaya - Psychotherapy clinic": {
       "category": "healthcare",
       "name": "Antakaya Psychotherapy Clinic",
       "location": "Dubai",
       "year": "2025–26",
-      "blurb": "A serene clinic interior combining soft curves, warm neutral finishes and thoughtfully designed therapy spaces for a calming, supportive environment."
+      "blurb": "A serene clinic interior combining soft curves, warm neutral finishes and thoughtfully designed therapy spaces for a calming, supportive environment.",
+      "sector": "Healthcare & Wellness – Psychotherapy Clinic",
+      "concept": "Serene, Warm & Therapeutic Contemporary Interior",
+      "description": [
+        "Antakaya Psychotherapy Clinic is designed as a calm and welcoming healthcare environment that moves away from the conventional clinical aesthetic. The interior establishes a soothing atmosphere through warm neutral colours, natural timber tones, rounded architectural forms and carefully controlled lighting. Soft curves and arched details are consistently incorporated throughout the space, creating a sense of comfort and visual softness that supports the therapeutic nature of the clinic.",
+        "The therapy rooms are designed to feel intimate, comfortable and residential rather than institutional. Curved sofas, upholstered lounge chairs, soft rugs and rounded side tables create flexible and relaxed settings for one-to-one counselling and therapy sessions. Illuminated arched niches provide subtle decorative interest while integrated lighting creates a gentle ambient glow, supporting a more reassuring experience for both clients and therapists.",
+        "Material selection focuses on warmth, tactility and visual continuity, combining light timber finishes, cream-toned surfaces, soft textiles and warm metallic accents. The reception area reinforces the same design language through a curved counter, timber feature wall and softly illuminated display shelving, while the clinic entrance introduces a refined branded identity. Overall, the project creates a sophisticated yet approachable psychotherapy environment where architectural detailing, furniture and lighting work together to promote calmness, privacy and emotional comfort."
+      ]
     },
     "Ayurveda": {
       "category": "healthcare",
       "name": "Ayurveda Clinic",
       "location": "Dubai",
       "year": "2025",
-      "blurb": "A calming Ayurveda clinic combining natural textures, warm finishes and functional treatment spaces to create a restorative wellness environment."
+      "blurb": "A calming Ayurveda clinic combining natural textures, warm finishes and functional treatment spaces to create a restorative wellness environment.",
+      "sector": "Healthcare & Wellness – Ayurveda Clinic",
+      "concept": "Natural, Warm & Holistic Wellness Environment",
+      "description": [
+        "The Ayurveda Clinic is conceived as a restorative healthcare environment that brings together traditional wellness references with a contemporary clinical setting. Warm timber finishes, marble-inspired surfaces and earthy tones establish a grounded and natural atmosphere, while the carefully controlled material palette helps create a sense of calm and continuity throughout the treatment areas. The combination of natural textures and warm finishes reflects the holistic character associated with Ayurvedic wellness.",
+        "The treatment spaces are designed around functionality and patient comfort, incorporating dedicated therapy areas, consultation spaces, wash facilities and custom timber treatment furniture. Richly finished wooden treatment tables introduce a traditional handcrafted quality, while the surrounding marble-look wall panels and timber framing provide a more contemporary backdrop. Decorative imagery and nature-inspired artwork further reinforce the wellness identity and create a more experiential environment for patients."
+      ]
     },
     "Shams Moopen clinic": {
       "category": "healthcare",
       "name": "Shams Moopen Dental Clinic",
       "location": "Dubai",
       "year": "2025",
-      "blurb": "A clinical interior fit-out with patient flow, lighting and materials planned around comfort and compliance in equal measure."
+      "blurb": "A clinical interior fit-out with patient flow, lighting and materials planned around comfort and compliance in equal measure.",
+      "sector": "Healthcare & Wellness – Dental Clinic",
+      "concept": "Contemporary, Elegant & Patient-Centred Dental Environment",
+      "description": [
+        "Shams Moopen Dental Clinic is designed as a contemporary healthcare environment that balances clinical functionality with a refined and welcoming patient experience. The interior uses a sophisticated palette of white, beige, light timber and subtle gold accents to create a clean yet warm atmosphere. Marble-inspired surfaces and elegant detailing give the reception area a premium character while maintaining the clarity and cleanliness expected of a dental facility.",
+        "The reception and waiting area form the visual focal point of the clinic, incorporating a custom reception counter, comfortable upholstered seating and decorative side tables. A marble-look feature wall with gold geometric detailing and full-height framed mirrors adds depth and sophistication, while the vertical timber slat partition introduces warmth and helps define the circulation zone. The planning and lighting approach supports clear patient movement while maintaining a calm and comfortable waiting experience.",
+        "Material selection combines durable, easy-to-maintain healthcare finishes with hospitality-inspired design elements. High-gloss marble-look flooring and wall surfaces establish a hygienic and polished foundation, while timber accents, upholstered furniture and warm metallic details soften the clinical character. Integrated linear lighting and clean ceiling detailing further enhance the contemporary aesthetic, resulting in a dental clinic that presents a professional, elegant and patient-focused identity."
+      ]
     },
     "Renders medical institute": {
       "category": "healthcare",
       "name": "Medical Institute",
       "location": "Dubai",
       "year": "2025 · Design",
-      "blurb": "Design renders for a medical teaching institute — calm, clinical spaces planned around students, staff and patients."
+      "blurb": "Design renders for a medical teaching institute — calm, clinical spaces planned around students, staff and patients.",
+      "sector": "Healthcare & Wellness – Medical Education / Institutional Campus",
+      "concept": "Biophilic, Contemporary & Healing-Campus Environment",
+      "description": [
+        "The Medical Institute is conceived as a contemporary medical education campus that combines institutional functionality with a strong connection to nature. Rather than creating a purely clinical environment, the design introduces landscaped courtyards, generous outdoor spaces and shaded social areas to provide students, staff and patients with opportunities for relaxation and informal interaction. The warm beige architectural palette and extensive greenery create a calm and approachable identity for the institute.",
+        "The landscape forms an important part of the overall design strategy, with organic pathways, planted islands, water features and outdoor seating creating a sequence of restorative spaces throughout the campus. Circular and curved seating areas are positioned beneath lightweight shade structures, while landscaped courtyards encourage informal gathering and social interaction. Covered pedestrian corridors with timber-look pergolas provide comfortable circulation between the different institute buildings while controlling sunlight and creating visual rhythm.",
+        "Material selection combines durable institutional finishes with natural and biophilic elements to create a refined yet welcoming environment. Stone-look façade panels establish a solid architectural base, while timber-look cladding and decorative screens introduce warmth and texture. Light-coloured paving, integrated concrete seating, gravel detailing, water features and extensive planting further reinforce the landscape-led character of the project. Overall, the Medical Institute creates a contemporary healthcare campus where education, patient care, social interaction and restorative outdoor experiences are brought together within a cohesive architectural environment."
+      ]
     },
     "Medical university Outdoor area - design only": {
       "category": "institutional",
       "name": "Medical University Outdoor Area",
       "location": "Dubai · Design only",
       "year": "2026 · Design",
-      "blurb": "A biophilic outdoor transformation combining shaded walkways, landscaped seating and organic forms to create a calming, restorative environment."
+      "blurb": "A biophilic outdoor transformation combining shaded walkways, landscaped seating and organic forms to create a calming, restorative environment.",
+      "sector": "Institutional – Medical University / Outdoor Landscape Design",
+      "concept": "Biophilic, Organic & Restorative Outdoor Environment",
+      "description": [
+        "The Medical University Outdoor Area is conceived as a biophilic and restorative landscape intervention, transforming an underutilised external area into a more welcoming environment for students, staff and visitors. The design introduces a strong connection to nature through extensive planting, mature palms, shaded pedestrian routes and organic landscape forms, creating a calmer outdoor setting within the institutional campus.",
+        "A key feature of the proposal is the introduction of fluid, curved planters and integrated seating elements that soften the geometry of the existing campus. Light grey paving forms the primary circulation surface, while contrasting dark pebble bands define the planting zones. Small timber-look tables and informal seating are incorporated within the landscaped areas, providing opportunities for rest, informal interaction and outdoor study.",
+        "Shaded walkways and timber-slatted pergolas are integrated throughout the outdoor circulation network to improve comfort in Dubai's climate while establishing a distinctive architectural character. Landscape lighting, layered planting and carefully framed views further enhance the environment after daylight hours, creating an outdoor space that balances functionality, comfort, wellness and contemporary institutional identity."
+      ]
     }
   }
 }
