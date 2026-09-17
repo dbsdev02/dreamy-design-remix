@@ -23,10 +23,10 @@ export const Route = createFileRoute("/contact")({
 });
 
 const details: [string, string, string?][] = [
-  ["Phone", "+971 58 910 2341", "tel:+971589102341"],
+  ["Phone", "+971 58 520 9636", "tel:+971585209636"],
   ["Email", "info@essentialsfnd.com", "mailto:info@essentialsfnd.com"],
-  ["Direct", "sanjana@essentialsfnd.ae", "mailto:sanjana@essentialsfnd.ae"],
-  ["Address", "Al Jaddaf Avenue Building, Office 707, Dubai, UAE"],
+  ["Address", "2nd Floor, Aspin Tower, Sheikh Zayed Road, Dubai"],
+  ["PO Box", "119564"],
   ["Hours", "Mon–Fri 8AM–6PM · Sat 8AM–2PM"],
 ];
 
@@ -82,7 +82,7 @@ function ContactPage() {
           <div className="mt-8 aspect-[4/3] w-full overflow-hidden border border-border">
             <iframe
               title="Essential Decor LLC location"
-              src="https://www.google.com/maps?q=Al+Jaddaf+Avenue+Building,+Dubai,+UAE&output=embed"
+              src="https://www.google.com/maps?q=Aspin+Tower,+Sheikh+Zayed+Road,+Dubai,+UAE&output=embed"
               className="h-full w-full grayscale"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

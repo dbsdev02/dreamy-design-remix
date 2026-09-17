@@ -235,7 +235,7 @@ function WhatsAppIcon({ size = 26 }: { size?: number }) {
 export function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/971589102341"
+      href="https://wa.me/971585209636"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"
@@ -405,9 +405,9 @@ export function SiteHeader({ inverse = false }: { inverse?: boolean }) {
                 Contact <span className="text-accent underline decoration-2 underline-offset-4">Info</span>
               </p>
               <div className="mt-5 space-y-2 text-sm">
-                <p className="text-primary-foreground/70">Al Jaddaf Avenue Building, Office 707, Dubai</p>
-                <a href="tel:+971589102341" className="link-underline block">
-                  UAE | +971 58 910 2341
+                <p className="text-primary-foreground/70">2nd Floor, Aspin Tower, Sheikh Zayed Road, Dubai</p>
+                <a href="tel:+971585209636" className="link-underline block">
+                  UAE | +971 58 520 9636
                 </a>
                 <a href="mailto:info@essentialsfnd.com" className="link-underline block">
                   info@essentialsfnd.com
@@ -431,7 +431,7 @@ export function SiteHeader({ inverse = false }: { inverse?: boolean }) {
                   </a>
                 ))}
                 <a
-                  href="https://wa.me/971589102341"
+                  href="https://wa.me/971585209636"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Chat with us on WhatsApp"
@@ -486,12 +486,12 @@ export function SiteFooter({ showCta = true }: { showCta?: boolean }) {
           />
         </Link>
         <div className="md:col-span-3 md:pt-2">
-          <p>Al Jaddaf Avenue Building</p>
-          <p>Office 707, Dubai, UAE</p>
+          <p>2nd Floor, Aspin Tower</p>
+          <p>Sheikh Zayed Road, Dubai, UAE</p>
         </div>
         <div className="md:col-span-2">
-          <a href="tel:+971589102341" className="link-underline block">
-            +971 58 910 2341
+          <a href="tel:+971585209636" className="link-underline block">
+            +971 58 520 9636
           </a>
           <a href="mailto:info@essentialsfnd.com" className="link-underline block">
             info@essentialsfnd.com
