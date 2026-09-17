@@ -35,8 +35,8 @@ export const Route = createFileRoute("/about")({
 function AboutPage() {
   return (
     <PageShell>
+      <SiteHeader />
       <section className="bg-primary text-primary-foreground">
-        <SiteHeader inverse />
         <PageIntro
           eyebrow="About"
           title={

@@ -61,8 +61,8 @@ function ProjectDetail() {
   if (!project) {
     return (
       <PageShell>
+        <SiteHeader />
         <section className="bg-secondary">
-          <SiteHeader />
         </section>
         <section className="px-8 py-32 text-center md:px-16">
           <p className="text-xs font-semibold uppercase tracking-[.18em] text-accent">Not found</p>
@@ -84,12 +84,12 @@ function ProjectDetail() {
 
   return (
     <PageShell>
+      <SiteHeader inverse />
       <section className="relative bg-primary text-primary-foreground">
         <div className="absolute inset-0 overflow-hidden">
           <img src={hero} alt={project.name} className="h-full w-full object-cover opacity-45" />
         </div>
         <div className="relative z-10">
-          <SiteHeader inverse />
           <div className="min-h-[38svh] md:min-h-[46svh]" />
         </div>
       </section>

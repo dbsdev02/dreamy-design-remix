@@ -33,8 +33,8 @@ const details: [string, string, string?][] = [
 function ContactPage() {
   return (
     <PageShell>
+      <SiteHeader />
       <section className="bg-primary text-primary-foreground">
-        <SiteHeader inverse />
         <PageIntro
           eyebrow="Contact"
           title={

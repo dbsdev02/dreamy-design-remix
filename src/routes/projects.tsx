@@ -27,8 +27,8 @@ export const Route = createFileRoute("/projects")({
 function ProjectsPage() {
   return (
     <PageShell>
+      <SiteHeader />
       <section className="bg-secondary">
-        <SiteHeader />
         <PageIntro
           eyebrow="Our work"
           title={

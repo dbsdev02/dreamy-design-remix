@@ -37,8 +37,8 @@ function BlogsPage() {
 
   return (
     <PageShell>
+      <SiteHeader />
       <section className="bg-secondary">
-        <SiteHeader />
         <PageIntro
           eyebrow="Blog"
           title={

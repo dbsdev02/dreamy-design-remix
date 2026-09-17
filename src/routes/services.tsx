@@ -40,8 +40,8 @@ const leadServices = [
 function ServicesPage() {
   return (
     <PageShell>
+      <SiteHeader />
       <section className="bg-secondary">
-        <SiteHeader />
         <PageIntro
           eyebrow="Services"
           title={
