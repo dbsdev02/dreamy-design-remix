@@ -27,7 +27,7 @@ import {
   testimonials,
 } from "@/lib/portfolio";
 import { clientLogos } from "@/lib/clients";
-import { projectsByCategory, type Project } from "@/lib/projects";
+import { projectsByCategory, projects, type Project } from "@/lib/projects";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -55,7 +55,18 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const slideProjects = projectsByCategory.flatMap((c) => c.projects.slice(0, 2));
+const featuredSlugs = [
+  "prepme-learning-centre",
+  "dhcx-office",
+  "toddlers-international-nursery-majan",
+  "averyx-group-office",
+  "one-stop-shop-office",
+  "balance-studio-yoga-and-pilates",
+];
+
+const slideProjects = featuredSlugs
+  .map((slug) => projects.find((p) => p.slug === slug))
+  .filter(Boolean) as Project[];
 
 const galleryImages = projectsByCategory
   .flatMap((c) => c.projects.slice(0, 3))
@@ -468,23 +479,38 @@ function Index() {
         </Reveal>
       </section>
 
-      <section className="border-y border-border py-14">
-        <Reveal className="mb-8 px-8 md:px-16">
-          <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            Registered and approved to undertake interior fit-out, design and related commercial
-            works across Dubai and the UAE.
-          </p>
-        </Reveal>
-        <Marquee speed={30}>
-          {approvals.map((name) => (
-            <span
-              key={name}
-              className="mx-3 inline-flex items-center whitespace-nowrap rounded-full border border-border px-7 py-3.5 text-sm font-semibold uppercase tracking-[.1em] text-foreground/80 md:text-base"
+      <section className="bg-primary py-24 text-primary-foreground md:py-32">
+        <div className="grid grid-cols-1 gap-12 px-8 md:grid-cols-12 md:px-16">
+          <Reveal className="md:col-span-4 md:col-start-2">
+            <p className="text-xs font-semibold uppercase tracking-[.18em] text-accent">
+              Authority Approvals
+            </p>
+          </Reveal>
+          <Reveal delay={140} className="md:col-span-6 md:col-start-7">
+            <p className="text-lg leading-relaxed">
+              Registered and approved to undertake interior fit-out, design and related commercial
+              works across Dubai and the UAE.
+            </p>
+            <Link
+              to="/contact"
+              className="link-underline mt-8 inline-flex items-center gap-3 border-b border-primary-foreground pb-2 text-xs font-semibold uppercase tracking-[.14em]"
             >
-              {name}
-            </span>
-          ))}
-        </Marquee>
+              Work with us <ArrowUpRight size={16} />
+            </Link>
+          </Reveal>
+        </div>
+        <div className="mt-14 border-t border-primary-foreground/20 pt-8">
+          <Marquee speed={30}>
+            {approvals.map((name) => (
+              <span
+                key={name}
+                className="mx-3 inline-flex items-center whitespace-nowrap rounded-full border border-primary-foreground/25 px-7 py-3.5 text-sm font-semibold uppercase tracking-[.1em] text-primary-foreground/80 md:text-base"
+              >
+                {name}
+              </span>
+            ))}
+          </Marquee>
+        </div>
       </section>
 
       <section className="grid-lines px-8 py-28 md:px-16 md:py-40">

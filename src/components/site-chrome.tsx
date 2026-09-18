@@ -231,18 +231,46 @@ function WhatsAppIcon({ size = 26 }: { size?: number }) {
   );
 }
 
-/** Fixed floating button that opens a WhatsApp chat — present on every page. */
+/** Fixed floating WhatsApp toggle button — present on every page. */
 export function WhatsAppButton() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <a
-      href="https://wa.me/971585209636"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Chat with us on WhatsApp"
-      className="fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform duration-300 hover:scale-110"
-    >
-      <WhatsAppIcon />
-    </a>
+    <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
+      {open && (
+        <div className="animate-rise-in w-72 rounded-2xl bg-white shadow-2xl overflow-hidden">
+          <div className="flex items-center gap-3 bg-[#25D366] px-4 py-3">
+            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/20">
+              <WhatsAppIcon size={20} />
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-white">Essential Decor</p>
+              <p className="text-[11px] text-white/80">Typically replies instantly</p>
+            </div>
+          </div>
+          <div className="px-4 py-4">
+            <div className="rounded-lg bg-[#f0f4f8] px-3 py-2.5 text-sm text-gray-700">
+              Hi! 👋 How can we help you with your interior project?
+            </div>
+            <a
+              href="https://wa.me/971585209636?text=Hi%2C%20I%27m%20interested%20in%20your%20interior%20fit-out%20services."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+            >
+              <WhatsAppIcon size={16} /> Start Chat
+            </a>
+          </div>
+        </div>
+      )}
+      <button
+        onClick={() => setOpen((v) => !v)}
+        aria-label="Toggle WhatsApp chat"
+        className="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform duration-300 hover:scale-110"
+      >
+        {open ? <X size={22} strokeWidth={2} /> : <WhatsAppIcon />}
+      </button>
+    </div>
   );
 }
 

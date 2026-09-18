@@ -51,20 +51,31 @@ const slugify = (s: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
 
+/** Returns true for real photos (jpeg/jpg) — preferred as cover and shown first. */
+const isPhoto = (url: string) => /\.(jpe?g)$/i.test(url);
+
 export const projects: Project[] = Object.entries(META)
   .filter(([folder]) => !FOLDER_SKIP.has(folder) && manifest[folder]?.length)
   .map(([folder, m]) => {
-    const images = (manifest[folder] ?? []).slice();
+    const raw = (manifest[folder] ?? []).slice();
+
+    // Sort: real photos first, renders/screenshots after
+    const sorted = [
+      ...raw.filter(isPhoto),
+      ...raw.filter((u) => !isPhoto(u)),
+    ];
+
     if (m.order?.length) {
       const decoded = (u: string) => decodeURIComponent(u.split("/").pop() ?? "");
       const ranked = [...m.order];
-      images.sort((a, b) => {
+      sorted.sort((a, b) => {
         const ia = ranked.indexOf(decoded(a));
         const ib = ranked.indexOf(decoded(b));
         return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib);
       });
     }
-    const cover = images[Math.min(m.cover ?? 0, images.length - 1)] ?? images[0] ?? "";
+
+    const cover = sorted[Math.min(m.cover ?? 0, sorted.length - 1)] ?? sorted[0] ?? "";
     return {
       slug: slugify(m.name),
       folder,
@@ -75,7 +86,7 @@ export const projects: Project[] = Object.entries(META)
       year: m.year,
       blurb: m.blurb,
       cover,
-      images,
+      images: sorted,
       ...(m.sector !== undefined && { sector: m.sector }),
       ...(m.clientType !== undefined && { clientType: m.clientType }),
       ...(m.concept !== undefined && { concept: m.concept }),
